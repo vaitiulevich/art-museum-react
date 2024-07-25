@@ -14,9 +14,15 @@ const GlobalStyle = createGlobalStyle`
    }
    body{
     background-color: #FAFAFA;
+    color: #393939;
    }
    img{
     height: 100%;
+    width: auto;
+   }
+   a{
+    text-decoration: none;
+    color: #393939;
    }
 `;
 export default GlobalStyle;
