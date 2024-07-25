@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -16,6 +17,7 @@ module.exports = {
       '@styles': path.resolve(__dirname, 'src/styles/'),
       '@assets': path.resolve(__dirname, 'src/assets/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@constants': path.resolve(__dirname, 'src/constants/'),
     },
     modules: ['.', 'node_modules'],
   },
