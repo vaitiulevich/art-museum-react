@@ -20,7 +20,13 @@ const SpecialGallery: React.FC = () => {
 
   useEffect(() => {
     dispatch(
-      fetchArtworks({ limit: 3, page: currentPage, query, isPublic: true }),
+      fetchArtworks({
+        limit: 3,
+        page: currentPage,
+        query,
+        isPublic: true,
+        isSearchable: true,
+      }),
     );
   }, [dispatch, currentPage, query]);
 

@@ -5,10 +5,9 @@ import {
   ArtworkTitle,
   ArtworkArtist,
   ArtworDomain,
-  FavoriteMark,
 } from './styled';
-import bookmark from '@assets/icons/bookmark.svg';
 import { Link } from 'react-router-dom';
+import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 
 interface ArtworkProps {
   artwork: {
@@ -32,11 +31,7 @@ const ArtworkContentCard: React.FC<ArtworkProps> = ({ artwork }) => {
           {artwork.is_public_domain ? 'Public' : 'Privat'}
         </ArtworDomain>
       </ArtworkInfo>
-      <FavoriteMark>
-        <div>
-          <img src={bookmark} alt="favorites" />
-        </div>
-      </FavoriteMark>
+      <FavoriteMark id={artwork.id} />
     </ArtworkContent>
   );
 };

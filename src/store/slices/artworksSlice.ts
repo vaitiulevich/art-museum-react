@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { fetchArtworksApi } from '../../utils/api';
+import { fetchArtworksApi } from '@utils/api';
 
 interface Artwork {
   id: number;
@@ -38,6 +38,7 @@ interface FetchArtworksParams {
   query?: string;
   ids?: string;
   isPublic?: boolean;
+  isSearchable?: boolean;
 }
 
 export const fetchArtworks = createAsyncThunk(

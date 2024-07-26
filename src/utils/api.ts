@@ -7,10 +7,12 @@ interface FetchArtworksParams {
   query?: string;
   ids?: string;
   isPublic?: boolean;
+  isSearchable?: boolean;
 }
 
 export const fetchArtworksApi = async (params: FetchArtworksParams) => {
-  const response = await axios.get(ART_EDU_URL + '/search?', {
+  const isSearch = params.isSearchable ? '/search?' : '';
+  const response = await axios.get(ART_EDU_URL + isSearch, {
     params: {
       'query[term][is_public_domain]': params.isPublic,
       limit: params.limit,

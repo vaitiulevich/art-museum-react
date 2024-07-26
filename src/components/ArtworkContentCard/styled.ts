@@ -37,18 +37,3 @@ export const ArtworDomain = styled.p`
   font-size: 1rem;
   font-weight: 600;
 `;
-
-export const FavoriteMark = styled.div`
-  height: 45px;
-  width: 45px;
-  display: flex;
-  background-color: #f9f9f9;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #fbd7b2;
-  }
-`;

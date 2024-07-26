@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { ArtworkCardContainer, ArtworkImg, ArtworkContent } from './styled';
 import { ART_IMG_URL } from '@constants/constants';
 import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
+import noImg from '@assets/icons/noImg.png';
 
 interface ArtworkProps {
   artwork: {
@@ -20,8 +21,10 @@ const ArtworkCard: React.FC<ArtworkProps> = ({ artwork }) => {
   return (
     <ArtworkCardContainer key={artwork.id}>
       <ArtworkImg>
-        {artwork.image_id && (
+        {artwork.image_id ? (
           <img src={getImageUrl(artwork.image_id)} alt={artwork.title} />
+        ) : (
+          <img src={noImg} alt="no img" />
         )}
       </ArtworkImg>
       <ArtworkContent>

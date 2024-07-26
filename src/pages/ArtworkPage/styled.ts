@@ -5,22 +5,10 @@ export const ArtworkPageContainer = styled.section`
   display: flex;
   padding: 1rem 15%;
 `;
-export const FavoriteMark = styled.div`
+export const FavoriteMarkBlock = styled.div`
   position: relative;
   right: 50px;
   top: 7px;
-  height: 45px;
-  width: 48px;
-  display: flex;
-  background-color: #f9f9f9;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #fbd7b2;
-  }
 `;
 
 export const ArtworkImg = styled.div`

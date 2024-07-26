@@ -4,7 +4,7 @@ export const HeroTitle = styled.h1`
   width: 50%;
   font-size: 3.5rem;
   text-align: center;
-  margin-top: 2rem;
+  margin: 5rem 0 3rem;
   font-weight: 600;
   color: #393939;
 

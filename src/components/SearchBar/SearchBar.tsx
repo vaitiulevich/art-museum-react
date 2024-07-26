@@ -36,7 +36,14 @@ const SearchBar: React.FC = () => {
         setSearchQuery('');
         dispatch(setCurrentPage(1));
         dispatch(setQuery(searchQuery));
-        dispatch(fetchArtworks({ limit: 3, page: 1, query: searchQuery }));
+        dispatch(
+          fetchArtworks({
+            limit: 3,
+            page: 1,
+            query: searchQuery,
+            isSearchable: true,
+          }),
+        );
         return;
       }
       try {
@@ -44,7 +51,14 @@ const SearchBar: React.FC = () => {
         setValidationError(null);
         dispatch(setCurrentPage(1));
         dispatch(setQuery(searchQuery));
-        dispatch(fetchArtworks({ limit: 3, page: 1, query: searchQuery }));
+        dispatch(
+          fetchArtworks({
+            limit: 3,
+            page: 1,
+            query: searchQuery,
+            isSearchable: true,
+          }),
+        );
       } catch (error) {
         if (error instanceof yup.ValidationError) {
           setValidationError(error.message);

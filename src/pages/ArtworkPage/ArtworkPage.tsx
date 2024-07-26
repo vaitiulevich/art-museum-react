@@ -2,7 +2,6 @@ import { ART_EDU_URL, ART_IMG_URL } from '@constants/constants';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import favoriteMark from '@assets/icons/bookmark.svg';
 import {
   ArtworDomain,
   ArtworkArtist,
@@ -14,9 +13,10 @@ import {
   ArtworkImgBlock,
   ArtworkLoader,
   ArtworkPageContainer,
-  FavoriteMark,
+  FavoriteMarkBlock,
 } from './styled';
 import Loader from '@components/Loader/Loader';
+import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 
 interface ArtworkProps {
   title: string;
@@ -76,11 +76,9 @@ const ArtworkPage: React.FC = () => {
               <ArtworkImg>
                 <img src={getImageUrl(data.image_id)} alt={data.title} />
               </ArtworkImg>
-              <FavoriteMark>
-                <div>
-                  <img src={favoriteMark} alt="favorites" />
-                </div>
-              </FavoriteMark>
+              <FavoriteMarkBlock>
+                {id && <FavoriteMark id={+id} />}
+              </FavoriteMarkBlock>
             </ArtworkImgBlock>
             <ArtworkContent>
               <div>

@@ -7,6 +7,7 @@ import store from './store/store';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ArtworkPage from '@pages/ArtworkPage/ArtworkPage';
 import Home from '@pages/Home/Home';
+import FavouritesPage from '@pages/FavouritesPage/FavouritesPage';
 
 export default function Routing() {
   return (
@@ -14,7 +15,7 @@ export default function Routing() {
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Home />} />
-          {/* <Route path='/enter' element={<Enter/>} /> */}
+          <Route path="/favorites" element={<FavouritesPage />} />
           <Route path="/artwork/:id" element={<ArtworkPage />} />
         </Route>
       </Routes>

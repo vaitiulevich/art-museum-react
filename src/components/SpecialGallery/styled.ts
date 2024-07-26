@@ -35,12 +35,3 @@ export const ArtworksGrid = styled.div`
   grid-template-columns: 32% 32% 32%;
   gap: 1rem;
 `;
-
-export const Pagination = styled.div`
-  margin: 16px;
-`;
-
-export const Button = styled.button`
-  margin: 0 4px;
-  padding: 8px 16px;
-`;
