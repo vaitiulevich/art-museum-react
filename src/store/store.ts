@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from './slices/searchSlice';
+import artworksSlice from './slices/artworksSlice';
 
 const store = configureStore({
   reducer: {
-    gallery: searchReducer,
+    artworks: artworksSlice,
   },
 });
 

@@ -1,17 +1,7 @@
 import React, { memo } from 'react';
-import {
-  ArtworkCardContainer,
-  ArtworkImg,
-  ArtworkContent,
-  ArtworkInfo,
-  ArtworkTitle,
-  ArtworkArtist,
-  ArtworDomain,
-  FavoriteMark,
-} from './styled';
-import bookmark from '@assets/icons/bookmark.svg';
-import { Link } from 'react-router-dom';
+import { ArtworkCardContainer, ArtworkImg, ArtworkContent } from './styled';
 import { ART_IMG_URL } from '@constants/constants';
+import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
 
 interface ArtworkProps {
   artwork: {
@@ -35,20 +25,7 @@ const ArtworkCard: React.FC<ArtworkProps> = ({ artwork }) => {
         )}
       </ArtworkImg>
       <ArtworkContent>
-        <ArtworkInfo>
-          <ArtworkTitle>
-            <Link to={'/artwork/' + artwork.id}>{artwork.title}</Link>
-          </ArtworkTitle>
-          <ArtworkArtist>{artwork.artist_title}</ArtworkArtist>
-          <ArtworDomain>
-            {artwork.is_public_domain ? 'Public' : 'Privat'}
-          </ArtworDomain>
-        </ArtworkInfo>
-        <FavoriteMark>
-          <div>
-            <img src={bookmark} alt="favorites" />
-          </div>
-        </FavoriteMark>
+        <ArtworkContentCard artwork={artwork} />
       </ArtworkContent>
     </ArtworkCardContainer>
   );

@@ -6,18 +6,18 @@ export const PaginationContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const PageNumber = styled.button<{ isActive: boolean }>`
+export const PageNumber = styled.button<{ $isactive: boolean }>`
   margin: 0 2px;
   padding: 0.4rem 0.6rem;
   font-weight: 600;
   border: none;
-  background-color: ${(props) => (props.isActive ? '#ff7f0e' : 'transparent')};
-  color: ${(props) => (props.isActive ? 'white' : '#333')};
+  background-color: ${(props) => (props.$isactive ? '#ff7f0e' : 'transparent')};
+  color: ${(props) => (props.$isactive ? 'white' : '#333')};
   cursor: pointer;
   border-radius: 4px;
 
   &:hover {
-    background-color: ${(props) => (props.isActive ? '#ff7f0e' : '#eaeaea')};
+    background-color: ${(props) => (props.$isactive ? '#ff7f0e' : '#eaeaea')};
   }
 
   &:focus {

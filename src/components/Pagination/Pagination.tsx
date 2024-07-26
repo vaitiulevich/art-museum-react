@@ -29,7 +29,7 @@ const Pagination: React.FC<PaginationProps> = ({
       pages.push(
         <PageNumber
           key={i}
-          isActive={i === currentPage}
+          $isactive={i === currentPage}
           onClick={() => handlePageChange(i)}
         >
           {i}
