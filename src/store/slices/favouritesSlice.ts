@@ -44,7 +44,6 @@ const favouritesSlice = createSlice({
   initialState,
   reducers: {
     addFavorite: (state, action: PayloadAction<number>) => {
-      console.log(action.payload);
       state.items.push(action.payload);
       localStorage.setItem('favourites', JSON.stringify(state.items));
     },

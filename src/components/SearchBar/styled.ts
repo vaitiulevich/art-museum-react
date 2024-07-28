@@ -17,7 +17,7 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchBarBlock = styled.div`
-  width: 50%;
+  width: 65%;
   display: flex;
   justify-content: space-between;
   align-items: center;

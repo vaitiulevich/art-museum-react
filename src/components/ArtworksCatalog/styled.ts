@@ -6,6 +6,13 @@ export const ArtworksGrid = styled.div`
   grid-template-columns: 33% 33% 33%;
   gap: 0.7rem;
   justify-content: space-between;
+
+  @media (max-width: 450px) {
+    grid-template-columns: 50% 50%;
+  }
+  @media (max-width: 380px) {
+    grid-template-columns: 100%;
+  }
 `;
 
 export const ArtworkImg = styled.div`

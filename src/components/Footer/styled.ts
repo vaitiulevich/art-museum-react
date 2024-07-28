@@ -7,6 +7,10 @@ export const FooterContainer = styled.footer`
   justify-content: space-between;
   background-color: #ffffff;
   padding: 1rem 15%;
+
+  @media (max-width: 600px) {
+    padding: 1rem 3%;
+  }
 `;
 export const Logo = styled.div`
   height: 40px;

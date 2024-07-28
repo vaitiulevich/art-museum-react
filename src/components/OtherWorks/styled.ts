@@ -6,7 +6,6 @@ export const OtherWorksContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  padding: 1rem 15%;
 `;
 
 export const OtherWorksHeadline = styled.div`

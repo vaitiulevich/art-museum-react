@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeroTitle = styled.h1`
-  width: 50%;
+  width: 70%;
   font-size: 3.5rem;
   text-align: center;
   margin: 5rem 0 3rem;
@@ -10,6 +10,9 @@ export const HeroTitle = styled.h1`
 
   span {
     color: #f17900;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 export const HeroContainer = styled.div`

@@ -3,13 +3,11 @@ import styled from 'styled-components';
 export const FavouritesContainer = styled.section`
   width: 100%;
   display: flex;
-  padding: 1rem 15%;
   flex-direction: column;
   align-items: center;
 `;
 
 export const Title = styled.h2`
-  width: 50%;
   font-size: 3.5rem;
   text-align: center;
   margin-top: 2rem;

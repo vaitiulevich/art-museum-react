@@ -16,7 +16,7 @@ export const ArtworkContent = styled.div`
 `;
 
 export const ArtworkImg = styled.div`
-  height: 400px;
+  height: calc(calc(1vw + 1vh) * 21);
   background-color: #eaeaea;
   display: flex;
   overflow: hidden;
