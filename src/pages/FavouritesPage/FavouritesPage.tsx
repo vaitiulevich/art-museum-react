@@ -29,19 +29,18 @@ const FavouritesPage: React.FC = () => {
 
   return (
     <FavouritesContainer>
+      <FavouritesHeadline>
+        <Title>Here Are Your</Title>
+        <SubTitle>
+          <img src={favIcon} alt="favourites" />
+          <span>Favorites</span>
+        </SubTitle>
+      </FavouritesHeadline>
       {isLoadingFavourites ? (
         <Loader />
       ) : (
         favourites && (
           <>
-            <FavouritesHeadline>
-              <Title>Here Are Your</Title>
-              <SubTitle>
-                <img src={favIcon} alt="favourites" />
-                <span>Favorites</span>
-              </SubTitle>
-            </FavouritesHeadline>
-
             <FavouritesCatalogHeadline>
               <CatalogSubTitle>Saved by you</CatalogSubTitle>
               <CatalogTitle>Your favorites list</CatalogTitle>

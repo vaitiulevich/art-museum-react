@@ -11,7 +11,7 @@ import {
   fetchArtworks,
   setCurrentPage,
   setQuery,
-} from 'store/slices/artworksSlice';
+} from '@store/slices/artworksSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'store/store';
 import debounce from 'lodash.debounce';

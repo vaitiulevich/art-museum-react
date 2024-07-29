@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ArtworkPage from '@pages/ArtworkPage/ArtworkPage';
 import Home from '@pages/Home/Home';
 import FavouritesPage from '@pages/FavouritesPage/FavouritesPage';
+import ErrorBoundary from '@components/ErrorBoundary/ErrorBoundary';
 
 export default function Routing() {
   return (
@@ -27,9 +28,11 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <Provider store={store}>
-    <Routing />
-  </Provider>,
+  <ErrorBoundary>
+    <Provider store={store}>
+      <Routing />
+    </Provider>
+  </ErrorBoundary>,
 );
 
 reportWebVitals();

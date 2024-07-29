@@ -14,7 +14,11 @@ export const fetchArtworksApi = async (params: FetchArtworksParams) => {
   const isSearch = params.isSearchable ? '/search?' : '';
   const response = await axios.get(ART_EDU_URL + isSearch, {
     params: {
-      'query[term][is_public_domain]': params.isPublic,
+      query: {
+        term: {
+          is_public_domain: params.isPublic,
+        },
+      },
       limit: params.limit,
       page: params.page,
       q: params.query,

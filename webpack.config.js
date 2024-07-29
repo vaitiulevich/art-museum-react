@@ -18,6 +18,7 @@ module.exports = {
       '@assets': path.resolve(__dirname, 'src/assets/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@constants': path.resolve(__dirname, 'src/constants/'),
+      '@store': path.resolve(__dirname, 'src/store/'),
     },
     modules: ['.', 'node_modules'],
   },
