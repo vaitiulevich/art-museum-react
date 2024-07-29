@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from './slices/searchSlice';
+import artworksSlice from './slices/artworksSlice';
+import favouritesSlice from './slices/favouritesSlice';
+import { thunk } from 'redux-thunk';
 
 const store = configureStore({
   reducer: {
-    gallery: searchReducer,
+    artworks: artworksSlice,
+    favourites: favouritesSlice,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -8,7 +8,7 @@ import {
 } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../../store/store';
-import { fetchArtworks, setCurrentPage } from 'store/slices/searchSlice';
+import { fetchArtworks, setCurrentPage } from 'store/slices/artworksSlice';
 import ArtworkCard from '@components/ArtworkCard/ArtworkCard';
 import Pagination from '@components/Pagination/Pagination';
 import Loader from '@components/Loader/Loader';
@@ -16,10 +16,18 @@ import Loader from '@components/Loader/Loader';
 const SpecialGallery: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { artworks, isLoading, error, currentPage, totalPages, query } =
-    useSelector((state: RootState) => state.gallery);
+    useSelector((state: RootState) => state.artworks);
 
   useEffect(() => {
-    dispatch(fetchArtworks({ page: currentPage, query }));
+    dispatch(
+      fetchArtworks({
+        limit: 3,
+        page: currentPage,
+        query,
+        isPublic: true,
+        isSearchable: true,
+      }),
+    );
   }, [dispatch, currentPage, query]);
 
   const handlePageChange = useCallback(
@@ -33,7 +41,7 @@ const SpecialGallery: React.FC = () => {
     <SpecialGalleryContainer>
       <SpecialGalleryHeadline>
         <SubTitle>Topics for you</SubTitle>
-        <Title>Our special gallery</Title>
+        <Title>Our special artworks</Title>
       </SpecialGalleryHeadline>
       {isLoading && artworks.length < 1 && <Loader />}
       {error && <p>{error}</p>}

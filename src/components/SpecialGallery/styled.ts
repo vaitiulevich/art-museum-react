@@ -6,7 +6,6 @@ export const SpecialGalleryContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  padding: 1rem 15%;
 `;
 
 export const SpecialGalleryHeadline = styled.div`
@@ -34,13 +33,8 @@ export const ArtworksGrid = styled.div`
   display: grid;
   grid-template-columns: 32% 32% 32%;
   gap: 1rem;
-`;
 
-export const Pagination = styled.div`
-  margin: 16px;
-`;
-
-export const Button = styled.button`
-  margin: 0 4px;
-  padding: 8px 16px;
+  @media (max-width: 450px) {
+    grid-template-columns: 100%;
+  }
 `;

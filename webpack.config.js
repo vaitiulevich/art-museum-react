@@ -5,19 +5,21 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/art-museum-react/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
+      process: 'process/browser',
       '@components': path.resolve(__dirname, 'src/components/'),
       '@utils': path.resolve(__dirname, 'src/utils/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
       '@assets': path.resolve(__dirname, 'src/assets/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@constants': path.resolve(__dirname, 'src/constants/'),
+      '@store': path.resolve(__dirname, 'src/store/'),
     },
     modules: ['.', 'node_modules'],
   },
@@ -55,7 +57,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: 'public/index.html',
       filename: 'index.html',
     }),
   ],

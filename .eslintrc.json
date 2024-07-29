@@ -17,6 +17,14 @@
     },
     "sourceType": "module"
   },
+  "overrides": [
+    {
+      "files": ["tests/**/*"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "plugins": ["@typescript-eslint", "react", "prettier"],
   "rules": {},
   "settings": {

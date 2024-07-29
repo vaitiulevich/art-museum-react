@@ -3,42 +3,38 @@ import styled from 'styled-components';
 export const ArtworkPageContainer = styled.section`
   width: 100%;
   display: flex;
-  padding: 1rem 15%;
-`;
-export const FavoriteMark = styled.div`
-  position: relative;
-  right: 50px;
-  top: 7px;
-  height: 45px;
-  width: 48px;
-  display: flex;
-  background-color: #f9f9f9;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
 
-  &:hover {
-    background-color: #fbd7b2;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
   }
+`;
+export const FavoriteMarkBlock = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `;
 
 export const ArtworkImg = styled.div`
   width: auto;
   height: 100%;
+  text-align: center;
 
   max-height: 500px;
   max-width: 600px;
+  background-color: #80808033;
 
   img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
   }
 `;
 
 export const ArtworkImgBlock = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  position: relative;
+  margin-right: 20px;
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 export const ArtworkContent = styled.div`

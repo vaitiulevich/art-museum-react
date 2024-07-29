@@ -11,7 +11,7 @@ import {
   fetchArtworks,
   setCurrentPage,
   setQuery,
-} from 'store/slices/searchSlice';
+} from '@store/slices/artworksSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'store/store';
 import debounce from 'lodash.debounce';
@@ -21,12 +21,12 @@ const searchSchema = yup.object().shape({
   query: yup
     .string()
     .trim()
-    .min(3, 'Search query must be at least 2 characters long'),
+    .min(2, 'Search query must be at least 2 characters long'),
 });
 
 const SearchBar: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { query } = useSelector((state: RootState) => state.gallery);
+  const { query } = useSelector((state: RootState) => state.artworks);
   const [searchQuery, setSearchQuery] = useState<string>(query);
   const [validationError, setValidationError] = useState<string | null>(null);
 
@@ -36,7 +36,14 @@ const SearchBar: React.FC = () => {
         setSearchQuery('');
         dispatch(setCurrentPage(1));
         dispatch(setQuery(searchQuery));
-        dispatch(fetchArtworks({ page: 1, query: searchQuery }));
+        dispatch(
+          fetchArtworks({
+            limit: 3,
+            page: 1,
+            query: searchQuery,
+            isSearchable: true,
+          }),
+        );
         return;
       }
       try {
@@ -44,7 +51,14 @@ const SearchBar: React.FC = () => {
         setValidationError(null);
         dispatch(setCurrentPage(1));
         dispatch(setQuery(searchQuery));
-        dispatch(fetchArtworks({ page: 1, query: searchQuery }));
+        dispatch(
+          fetchArtworks({
+            limit: 3,
+            page: 1,
+            query: searchQuery,
+            isSearchable: true,
+          }),
+        );
       } catch (error) {
         if (error instanceof yup.ValidationError) {
           setValidationError(error.message);
