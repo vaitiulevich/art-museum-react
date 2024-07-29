@@ -4,12 +4,7 @@ import App from '@pages/App/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  HashRouter as Router,
-} from 'react-router-dom';
+import { Route, Routes, HashRouter as Router } from 'react-router-dom';
 import ArtworkPage from '@pages/ArtworkPage/ArtworkPage';
 import Home from '@pages/Home/Home';
 import FavouritesPage from '@pages/FavouritesPage/FavouritesPage';
