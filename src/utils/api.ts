@@ -8,6 +8,7 @@ interface FetchArtworksParams {
   ids?: string;
   isPublic?: boolean;
   isSearchable?: boolean;
+  sort?: string;
 }
 
 export const fetchArtworksApi = async (params: FetchArtworksParams) => {
@@ -19,6 +20,7 @@ export const fetchArtworksApi = async (params: FetchArtworksParams) => {
           is_public_domain: params.isPublic,
         },
       },
+      sort: params.sort,
       limit: params.limit,
       page: params.page,
       q: params.query,

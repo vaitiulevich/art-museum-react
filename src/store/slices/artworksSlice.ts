@@ -39,6 +39,7 @@ interface FetchArtworksParams {
   ids?: string;
   isPublic?: boolean;
   isSearchable?: boolean;
+  sort?: string;
 }
 
 export const fetchArtworks = createAsyncThunk(

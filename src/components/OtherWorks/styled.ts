@@ -27,3 +27,9 @@ export const Title = styled.h2`
   font-size: 2rem;
   margin: 0;
 `;
+
+export const Select = styled.select`
+  padding: 0.6rem 1rem;
+  border: 1px solid #dfdfdf;
+  margin-bottom: 10px;
+`;
