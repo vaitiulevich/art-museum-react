@@ -24,21 +24,12 @@ export const ArtworkImg = styled.div`
   background-color: #80808033;
 
   img {
-    width: 100%;
-  }
-
-  @media (max-width: 768px) {
-    img {
-      width: auto;
-      max-width: 100%;
-    }
+    width: auto;
+    max-width: 100%;
   }
 `;
 
 export const ArtworkImgBlock = styled.div`
-  /* display: flex;
-  align-items: flex-start;
-  justify-content: center; */
   position: relative;
   margin-right: 20px;
   @media (max-width: 768px) {

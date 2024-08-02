@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import {
   SubTitle,
   FavouritesContainer,
@@ -21,10 +21,18 @@ const FavouritesPage: React.FC = () => {
     (state: RootState) => state.favourites,
   );
 
+  const isEmpty = useMemo(() => items.length === 0, [items]);
+
   useEffect(() => {
-    dispatch(
-      fetchFavourites({ limit: 18, ids: items.join(','), isSearchable: false }),
-    );
+    if (!isEmpty) {
+      dispatch(
+        fetchFavourites({
+          limit: 18,
+          ids: items.join(','),
+          isSearchable: false,
+        }),
+      );
+    }
   }, [dispatch, items]);
 
   return (
@@ -45,7 +53,11 @@ const FavouritesPage: React.FC = () => {
               <CatalogSubTitle>Saved by you</CatalogSubTitle>
               <CatalogTitle>Your favorites list</CatalogTitle>
             </FavouritesCatalogHeadline>
-            <ArtworksCatalog artwork={favourites} />
+            {isEmpty ? (
+              <p>Empty here yet</p>
+            ) : (
+              <ArtworksCatalog artwork={favourites} />
+            )}
           </>
         )
       )}

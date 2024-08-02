@@ -2,6 +2,7 @@ import { ART_EDU_URL, ART_IMG_URL } from '@constants/constants';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import {
   ArtworDomain,
   ArtworkArtist,

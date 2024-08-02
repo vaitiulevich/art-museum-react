@@ -107,19 +107,4 @@ export const BurgerMenu = styled.nav<{ open: boolean }>`
     align-items: center;
     cursor: pointer;
   }
-
-  /* a {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s linear;
-
-    &:hover {
-      color: #343078;
-    }
-  } */
 `;

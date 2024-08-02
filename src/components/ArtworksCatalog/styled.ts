@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ArtworksGrid = styled.div`
   width: 100%;
+  height: -webkit-fill-available;
   display: grid;
   grid-template-columns: 33% 33% 33%;
   gap: 0.7rem;
