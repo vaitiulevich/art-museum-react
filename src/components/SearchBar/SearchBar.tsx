@@ -1,21 +1,22 @@
-import React, { useCallback, useState } from 'react';
-import {
-  SearchContainer,
-  SearchInput,
-  SearchBarBlock,
-  SearchIcon,
-  ErrorMessage,
-} from './styled';
 import searchIcon from '@assets/icons/search.svg';
 import {
   fetchArtworks,
   setCurrentPage,
   setQuery,
 } from '@store/slices/artworksSlice';
+import debounce from 'lodash.debounce';
+import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'store/store';
-import debounce from 'lodash.debounce';
 import * as yup from 'yup';
+
+import {
+  ErrorMessage,
+  SearchBarBlock,
+  SearchContainer,
+  SearchIcon,
+  SearchInput,
+} from './styled';
 
 const searchSchema = yup.object().shape({
   query: yup

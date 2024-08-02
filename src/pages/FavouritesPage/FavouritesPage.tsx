@@ -1,19 +1,20 @@
-import React, { useEffect, useMemo } from 'react';
-import {
-  SubTitle,
-  FavouritesContainer,
-  Title,
-  CatalogTitle,
-  CatalogSubTitle,
-  FavouritesCatalogHeadline,
-  FavouritesHeadline,
-} from './styled';
-import Loader from '@components/Loader/Loader';
-import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from 'store/store';
-import { fetchFavourites } from 'store/slices/favouritesSlice';
 import favIcon from '@assets/icons/iconFavourites.svg';
+import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
+import Loader from '@components/Loader/Loader';
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchFavourites } from 'store/slices/favouritesSlice';
+import { AppDispatch, RootState } from 'store/store';
+
+import {
+  CatalogSubTitle,
+  CatalogTitle,
+  FavouritesCatalogHeadline,
+  FavouritesContainer,
+  FavouritesHeadline,
+  SubTitle,
+  Title,
+} from './styled';
 
 const FavouritesPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();

@@ -1,8 +1,9 @@
-import React, { memo } from 'react';
-import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
-import { ArtworksGrid, ArtworkImg, ArtworkCard } from './styled';
-import { ART_IMG_URL } from '@constants/constants';
 import noImg from '@assets/icons/noImg.png';
+import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
+import { ART_IMG_URL } from '@constants/constants';
+import React, { memo } from 'react';
+
+import { ArtworkCard,ArtworkImg, ArtworksGrid } from './styled';
 
 interface Artwork {
   id: number;

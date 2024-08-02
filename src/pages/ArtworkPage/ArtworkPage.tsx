@@ -1,3 +1,5 @@
+import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
+import Loader from '@components/Loader/Loader';
 import { ART_EDU_URL, ART_IMG_URL } from '@constants/constants';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -16,8 +18,6 @@ import {
   ArtworkPageContainer,
   FavoriteMarkBlock,
 } from './styled';
-import Loader from '@components/Loader/Loader';
-import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 
 interface ArtworkProps {
   title: string;

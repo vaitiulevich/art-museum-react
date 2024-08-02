@@ -1,8 +1,10 @@
+import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
+import Loader from '@components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from '../../store/store';
+
 import { fetchMoreArtworks } from '../../store/slices/artworksSlice';
-import Loader from '@components/Loader/Loader';
+import { AppDispatch,RootState } from '../../store/store';
 import {
   OtherWorksContainer,
   OtherWorksHeadline,
@@ -10,7 +12,6 @@ import {
   SubTitle,
   Title,
 } from './styled';
-import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
 
 const OtherWorks: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();

@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { ART_EDU_URL } from '@constants/constants';
+import axios from 'axios';
 
 interface FetchArtworksParams {
   limit: number;

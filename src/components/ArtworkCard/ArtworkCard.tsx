@@ -1,8 +1,9 @@
-import React, { memo } from 'react';
-import { ArtworkCardContainer, ArtworkImg, ArtworkContent } from './styled';
-import { ART_IMG_URL } from '@constants/constants';
-import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
 import noImg from '@assets/icons/noImg.png';
+import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
+import { ART_IMG_URL } from '@constants/constants';
+import React, { memo } from 'react';
+
+import { ArtworkCardContainer, ArtworkContent,ArtworkImg } from './styled';
 
 interface ArtworkProps {
   artwork: {

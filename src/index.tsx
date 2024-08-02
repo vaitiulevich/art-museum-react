@@ -1,14 +1,15 @@
+import ErrorBoundary from '@components/ErrorBoundary/ErrorBoundary';
+import App from '@pages/App/App';
+import ArtworkPage from '@pages/ArtworkPage/ArtworkPage';
+import FavouritesPage from '@pages/FavouritesPage/FavouritesPage';
+import Home from '@pages/Home/Home';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from '@pages/App/App';
-import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import { HashRouter as Router,Route, Routes } from 'react-router-dom';
+
+import reportWebVitals from './reportWebVitals';
 import store from './store/store';
-import { Route, Routes, HashRouter as Router } from 'react-router-dom';
-import ArtworkPage from '@pages/ArtworkPage/ArtworkPage';
-import Home from '@pages/Home/Home';
-import FavouritesPage from '@pages/FavouritesPage/FavouritesPage';
-import ErrorBoundary from '@components/ErrorBoundary/ErrorBoundary';
 
 export default function Routing() {
   return (

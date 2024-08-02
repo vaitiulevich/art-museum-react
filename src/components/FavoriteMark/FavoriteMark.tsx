@@ -1,9 +1,10 @@
-import React, { memo, useCallback } from 'react';
-import { FavoriteMarkContainer } from './styled';
 import bookmark from '@assets/icons/bookmark.svg';
+import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from 'store/slices/favouritesSlice';
 import { RootState } from 'store/store';
+
+import { FavoriteMarkContainer } from './styled';
 
 interface FavoriteMarkProps {
   id: number;

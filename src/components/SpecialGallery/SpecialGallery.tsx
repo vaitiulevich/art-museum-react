@@ -1,17 +1,18 @@
-import React, { useEffect, useCallback } from 'react';
+import ArtworkCard from '@components/ArtworkCard/ArtworkCard';
+import Loader from '@components/Loader/Loader';
+import Pagination from '@components/Pagination/Pagination';
+import React, { useCallback,useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchArtworks, setCurrentPage } from 'store/slices/artworksSlice';
+
+import { AppDispatch,RootState } from '../../store/store';
 import {
+  ArtworksGrid,
   SpecialGalleryContainer,
   SpecialGalleryHeadline,
   SubTitle,
   Title,
-  ArtworksGrid,
 } from './styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from '../../store/store';
-import { fetchArtworks, setCurrentPage } from 'store/slices/artworksSlice';
-import ArtworkCard from '@components/ArtworkCard/ArtworkCard';
-import Pagination from '@components/Pagination/Pagination';
-import Loader from '@components/Loader/Loader';
 
 const SpecialGallery: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();

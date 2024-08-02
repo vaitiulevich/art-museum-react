@@ -1,7 +1,8 @@
-import React, { memo } from 'react';
-import { ArrowButton, PageNumber, PaginationContainer } from './styled';
-import RightArrow from '@assets/icons/RightArrow.svg';
 import LeftArrow from '@assets/icons/LeftArrow.svg';
+import RightArrow from '@assets/icons/RightArrow.svg';
+import React, { memo } from 'react';
+
+import { ArrowButton, PageNumber, PaginationContainer } from './styled';
 
 interface PaginationProps {
   currentPage: number;

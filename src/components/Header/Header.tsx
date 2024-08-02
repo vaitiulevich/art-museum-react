@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import {
-  HeaderContainer,
-  Logo,
-  FavoriteMark,
-  HorizontalMenu,
-  BurgerMenu,
-  BurgerMenuPanels,
-} from './styled';
-import logo from '@assets/icons/museum-logo.svg';
 import bookmark from '@assets/icons/bookmark.svg';
 import home from '@assets/icons/home.svg';
+import logo from '@assets/icons/museum-logo.svg';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
+import {
+  BurgerMenu,
+  BurgerMenuPanels,
+  FavoriteMark,
+  HeaderContainer,
+  HorizontalMenu,
+  Logo,
+} from './styled';
 
 const Header: React.FC = () => {
   const location = useLocation();

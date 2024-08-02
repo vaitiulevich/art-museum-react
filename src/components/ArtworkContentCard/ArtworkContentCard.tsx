@@ -1,13 +1,14 @@
+import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
+
 import {
+  ArtworDomain,
+  ArtworkArtist,
   ArtworkContent,
   ArtworkInfo,
   ArtworkTitle,
-  ArtworkArtist,
-  ArtworDomain,
 } from './styled';
-import { Link } from 'react-router-dom';
-import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 
 interface ArtworkProps {
   artwork: {

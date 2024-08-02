@@ -1,5 +1,6 @@
-import React, { Component, ErrorInfo } from 'react';
 import logo from '@assets/icons/museum-logo-light.svg';
+import React, { Component, ErrorInfo } from 'react';
+
 import { ErrorBoundaryComponent, ErrorBoundaryTitle } from './styled';
 
 interface Props {

@@ -1,10 +1,9 @@
+import store from '@store/store';
+import { fireEvent,render, screen } from '@testing-library/react';
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 
-import SearchBar from './SearchBar';
-
-import store from '@store/store';
+import SearchBar from '../components/SearchBar/SearchBar';
 
 jest.mock('lodash.debounce', () =>
   jest.fn((fn) => {

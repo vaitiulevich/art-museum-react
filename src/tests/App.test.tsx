@@ -1,10 +1,19 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import App from '@pages/App/App';
+import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-jest.mock('@components/Header/Header', () => () => <div>Header</div>);
-jest.mock('@components/Footer/Footer', () => () => <div>Footer</div>);
+jest.mock('@components/Header/Header', () => {
+  const MockHeader = () => <div>Header</div>;
+  MockHeader.displayName = 'MockHeader';
+  return MockHeader;
+});
+
+jest.mock('@components/Footer/Footer', () => {
+  const MockFooter = () => <div>Footer</div>;
+  MockFooter.displayName = 'MockFooter';
+  return MockFooter;
+});
 
 test('renders App component', () => {
   render(
