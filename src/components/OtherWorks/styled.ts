@@ -14,22 +14,19 @@ export const OtherWorksHeadline = styled.div`
 `;
 
 export const SubTitle = styled.p`
-  color: #e0a449;
-  font-size: 1rem;
+  color: ${(props) => props.theme.colors.accentText};
+  font-size: ${(props) => props.theme.typography.fontSize.normal};
   margin: 0;
 `;
 
 export const Title = styled.h2`
-  color: #393939;
-  font-weight: 300;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 2rem;
+  font-weight: ${(props) => props.theme.typography.fontWeight.normal};
+  font-size: ${(props) => props.theme.typography.fontSize.large};
   margin: 0;
 `;
 
 export const Select = styled.select`
   padding: 0.6rem 1rem;
-  border: 0.01rem solid #dfdfdf;
+  border: ${(props) => props.theme.border};
   margin-bottom: 1rem;
 `;

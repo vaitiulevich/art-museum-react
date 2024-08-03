@@ -23,7 +23,7 @@ export const ArtworkImg = styled.div`
   align-items: center;
   overflow: hidden;
   justify-content: center;
-  background-color: #eaeaea;
+  background-color: ${(props) => props.theme.colors.fillFrame};
 `;
 
 export const ArtworkCard = styled.div`
@@ -35,8 +35,8 @@ export const ArtworkCard = styled.div`
   justify-content: space-between;
   max-height: 5.5rem;
   padding: 0.5rem;
-  background-color: #fff;
-  border: solid 0.01rem #f0f1f1;
+  background-color: ${(props) => props.theme.colors.fillBase};
+  border: ${(props) => props.theme.border};
 
   .artwork-content {
     width: 70%;

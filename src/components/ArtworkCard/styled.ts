@@ -11,14 +11,14 @@ export const ArtworkContent = styled.div`
   position: relative;
   bottom: 8%;
   margin: auto;
-  border: solid 0.01rem #f0f1f1;
+  border: ${(props) => props.theme.border};
   padding: 0.7rem;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.fillBase};
 `;
 
 export const ArtworkImg = styled.div`
   height: 21rem;
-  background-color: #eaeaea;
+  background-color: ${(props) => props.theme.colors.fillBase};
   display: flex;
   overflow: hidden;
   justify-content: center;

@@ -6,16 +6,11 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(
-    90deg,
-    rgba(52, 51, 51, 1) 0%,
-    rgba(72, 72, 72, 1) 53%,
-    rgba(40, 40, 40, 1) 100%
-  );
-  padding: 1rem 15%;
+  background: ${(props) => props.theme.colors.linerGradientHeader};
+  padding: ${(props) => props.theme.indents.containerPaddingDesctop};
 
   @media (max-width: ${breakpoints.tablet}px) {
-    padding: 1rem 3%;
+    padding: ${(props) => props.theme.indents.containerPaddingMobile};
   }
 `;
 export const Logo = styled.div`
@@ -33,9 +28,9 @@ export const HorizontalMenu = styled.nav`
   justify-content: space-between;
 
   a {
-    color: #fff;
-    font-weight: 300;
-    font-size: 0.8rem;
+    color: ${(props) => props.theme.colors.headerLink};
+    font-weight: ${(props) => props.theme.typography.fontWeight.thin};
+    font-size: ${(props) => props.theme.typography.fontSize.small};
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -61,7 +56,7 @@ export const BurgerMenuPanels = styled.div<{ open: boolean }>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: #fff;
+    background-color: ${(props) => props.theme.colors.fillBase};
     border-radius: 1rem;
     transform-origin: 0.01rem;
     transition: all 0.3s linear;
@@ -85,7 +80,7 @@ export const BurgerMenu = styled.nav<{ open: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #333;
+  background: ${(props) => props.theme.colors.fillMenuPanel};
   height: 100%;
   text-align: left;
   padding: 4rem 2rem 1rem 1rem;
@@ -101,9 +96,9 @@ export const BurgerMenu = styled.nav<{ open: boolean }>`
   }
 
   a {
-    color: #fff;
-    font-weight: 300;
-    font-size: 0.8rem;
+    color: ${(props) => props.theme.colors.headerLink};
+    font-weight: ${(props) => props.theme.typography.fontWeight.normal};
+    font-size: ${(props) => props.theme.typography.fontSize.small};
     display: flex;
     align-items: center;
     cursor: pointer;

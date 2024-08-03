@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ArtworkContent = styled.div`
   height: 100%;
   text-align: left;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.fillBase};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@ export const ArtworkInfo = styled.div`
 `;
 
 export const ArtworkTitle = styled.h3`
-  font-size: 1rem;
+  font-size: ${(props) => props.theme.typography.fontSize.medium};
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -26,14 +26,14 @@ export const ArtworkTitle = styled.h3`
 `;
 
 export const ArtworkArtist = styled.p`
-  font-size: 0.8rem;
+  font-size: ${(props) => props.theme.typography.fontSize.small};
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: #e0a449;
+  color: ${(props) => props.theme.colors.accentText};
   margin: 0.3rem 0 1rem;
 `;
 export const ArtworDomain = styled.p`
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: ${(props) => props.theme.typography.fontSize.medium};
+  font-weight: ${(props) => props.theme.typography.fontWeight.bold};
 `;

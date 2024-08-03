@@ -9,15 +9,22 @@ export const PaginationContainer = styled.div`
 export const PageNumber = styled.button<{ $isactive: boolean }>`
   margin: 0 0.1rem;
   padding: 0.4rem 0.6rem;
-  font-weight: 600;
+  font-weight: ${(props) => props.theme.typography.fontWeight.bold};
   border: none;
-  background-color: ${(props) => (props.$isactive ? '#ff7f0e' : 'transparent')};
-  color: ${(props) => (props.$isactive ? 'white' : '#333')};
+  background-color: ${(props) =>
+    props.$isactive ? props.theme.colors.accent : 'transparent'};
+  color: ${(props) =>
+    props.$isactive
+      ? props.theme.colors.fillBase
+      : props.theme.colors.fontColor};
   cursor: pointer;
   border-radius: 0.3rem;
 
   &:hover {
-    background-color: ${(props) => (props.$isactive ? '#ff7f0e' : '#eaeaea')};
+    background-color: ${(props) =>
+      props.$isactive
+        ? props.theme.colors.accent
+        : props.theme.colors.fillFrame};
   }
 
   &:focus {
@@ -30,7 +37,6 @@ export const ArrowButton = styled.button`
   padding: 0.4rem 0.6rem;
   border: none;
   background-color: transparent;
-  color: #333;
   cursor: pointer;
   border-radius: 0.3rem;
 

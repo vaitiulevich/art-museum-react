@@ -6,15 +6,15 @@ const GlobalStyle = createGlobalStyle`
        padding: 0;
        outline:0;
        box-sizing:border-box;
-       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+       font-family: ${(props) => props.theme.typography.fontFamily.general};
    }
    #root{
     margin:0 auto;
     padding: 0;
    }
    body{
-    background-color: #FAFAFA;
-    color: #393939;
+    background-color: ${(props) => props.theme.colors.fill};
+    color: ${(props) => props.theme.colors.fontColor};
    }
    img{
     height: 100%;
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
    }
    a{
     text-decoration: none;
-    color: #393939;
+    color: ${(props) => props.theme.colors.fontColor};
    }
 `;
 export default GlobalStyle;

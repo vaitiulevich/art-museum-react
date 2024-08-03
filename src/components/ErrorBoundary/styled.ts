@@ -5,13 +5,12 @@ export const ErrorBoundaryComponent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 90%;
 `;
 
 export const ErrorBoundaryTitle = styled.h2`
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
-  font-size: 2rem;
-  color: #393939;
-  font-weight: 100;
+  font-family: ${(props) => props.theme.typography.fontFamily.general};
+  font-size: ${(props) => props.theme.typography.fontSize.large};
+  color: ${(props) => props.theme.colors.fontColor};
+  font-weight: ${(props) => props.theme.typography.fontWeight.thin};
 `;

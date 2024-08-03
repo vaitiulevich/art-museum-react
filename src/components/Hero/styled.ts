@@ -3,14 +3,13 @@ import styled from 'styled-components';
 
 export const HeroTitle = styled.h1`
   width: 70%;
-  font-size: 3.5rem;
+  font-size: ${(props) => props.theme.typography.fontSize.largest};
   text-align: center;
   margin: 5rem 0 3rem;
-  font-weight: 600;
-  color: #393939;
+  font-weight: ${(props) => props.theme.typography.fontWeight.bold};
 
   span {
-    color: #f17900;
+    color: ${(props) => props.theme.colors.accent};
   }
   @media (max-width: ${breakpoints.tablet}px) {
     width: 100%;

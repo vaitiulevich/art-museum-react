@@ -8,20 +8,19 @@ export const FavouritesContainer = styled.section`
 `;
 
 export const Title = styled.h2`
-  font-size: 3.5rem;
+  font-size: ${(props) => props.theme.typography.fontSize.largest};
   text-align: center;
   margin-top: 2rem;
-  font-weight: 600;
-  color: #393939;
+  font-weight: ${(props) => props.theme.typography.fontWeight.bold};
 `;
 
 export const SubTitle = styled.div`
   width: 50%;
-  font-size: 3.5rem;
+  font-size: ${(props) => props.theme.typography.fontSize.largest};
   text-align: center;
   margin-top: 2rem;
-  font-weight: 600;
-  color: #f17900;
+  font-weight: ${(props) => props.theme.typography.fontWeight.bold};
+  color: ${(props) => props.theme.colors.accent};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,16 +28,13 @@ export const SubTitle = styled.div`
 `;
 
 export const CatalogSubTitle = styled.p`
-  color: #e0a449;
-  font-size: 1rem;
+  color: ${(props) => props.theme.colors.accentText};
   margin: 0;
 `;
 
 export const CatalogTitle = styled.h3`
-  color: #393939;
-  font-weight: 300;
-
-  font-size: 2rem;
+  font-weight: ${(props) => props.theme.typography.fontWeight.normal};
+  font-size: ${(props) => props.theme.typography.fontSize.large};
   margin: 0;
 `;
 

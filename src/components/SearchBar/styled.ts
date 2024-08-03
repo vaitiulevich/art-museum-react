@@ -23,7 +23,7 @@ export const SearchBarBlock = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  background-color: #39393914;
+  background-color: ${(props) => props.theme.colors.fillFrame};
   padding: 0.5rem;
   border-radius: 1rem;
 
@@ -38,7 +38,7 @@ export const SearchIcon = styled.div`
 `;
 
 export const ErrorMessage = styled.p`
-  color: red;
-  font-size: 1rem;
+  color: ${(props) => props.theme.colors.errMessage};
+  font-size: ${(props) => props.theme.typography.fontSize.small};
   margin-top: 0;
 `;

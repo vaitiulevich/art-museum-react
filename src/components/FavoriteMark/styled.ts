@@ -4,7 +4,10 @@ export const FavoriteMarkContainer = styled.div<{ $isfavorite: boolean }>`
   height: 3rem;
   width: 3rem;
   display: flex;
-  background-color: ${(props) => (props.$isfavorite ? '#fbd7b2' : '#f9f9f9')};
+  background-color: ${(props) =>
+    props.$isfavorite
+      ? props.theme.colors.activeFavorite
+      : props.theme.colors.fillFavorite};
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -12,6 +15,6 @@ export const FavoriteMarkContainer = styled.div<{ $isfavorite: boolean }>`
   transition: all 0.8s;
 
   &:hover {
-    background-color: #fbd7b2;
+    background-color: ${(props) => props.theme.colors.activeFavorite};
   }
 `;

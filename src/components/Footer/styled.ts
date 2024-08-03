@@ -6,11 +6,11 @@ export const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
-  padding: 1rem 15%;
+  background-color: ${(props) => props.theme.colors.fillBase};
+  padding: ${(props) => props.theme.indents.containerPaddingDesctop};
 
   @media (max-width: ${breakpoints.tablet}px) {
-    padding: 1rem 3%;
+    padding: ${(props) => props.theme.indents.containerPaddingMobile};
   }
 `;
 export const Logo = styled.div`
@@ -19,9 +19,8 @@ export const Logo = styled.div`
 
 export const ModsenLogo = styled.div`
   height: 3rem;
-  color: white;
-  font-weight: 300;
-  font-size: 0.8rem;
+  font-weight: ${(props) => props.theme.typography.fontWeight.normal};
+  font-size: ${(props) => props.theme.typography.fontSize.small};
   display: flex;
   align-items: center;
   cursor: pointer;

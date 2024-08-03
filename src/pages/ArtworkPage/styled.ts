@@ -22,7 +22,7 @@ export const ArtworkImg = styled.div`
 
   max-height: 25rem;
   max-width: 35rem;
-  background-color: #80808033;
+  background-color: ${(props) => props.theme.colors.fillFrame};
 
   img {
     width: auto;
@@ -45,34 +45,34 @@ export const ArtworkContent = styled.div`
 `;
 
 export const ArtworkHeadline = styled.h2`
-  font-size: 2rem;
-  font-weight: 100;
+  font-size: ${(props) => props.theme.typography.fontSize.large};
+  font-weight: ${(props) => props.theme.typography.fontWeight.thin};
   margin-bottom: 1rem;
 `;
 
 export const ArtworkArtist = styled.h3`
-  font-size: 1.1rem;
-  font-weight: 100;
-  color: #e0a449;
+  font-size: ${(props) => props.theme.typography.fontSize.medium};
+  font-weight: ${(props) => props.theme.typography.fontWeight.thin};
+  color: ${(props) => props.theme.colors.accentText};
   margin: 0 0 0.3rem;
 `;
 
 export const ArtworkDates = styled.p`
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: ${(props) => props.theme.typography.fontSize.small};
+  font-weight: ${(props) => props.theme.typography.fontWeight.bold};
 `;
 
 export const ArtworkDetails = styled.p`
-  font-size: 0.8rem;
+  font-size: ${(props) => props.theme.typography.fontSize.small};
   margin-bottom: 0.5rem;
 
   span {
-    color: #e0a449;
+    color: ${(props) => props.theme.colors.accentText};
   }
 `;
 export const ArtworDomain = styled.p`
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: ${(props) => props.theme.typography.fontSize.medium};
+  font-weight: ${(props) => props.theme.typography.fontWeight.bold};
 `;
 
 export const ArtworkLoader = styled.div`
