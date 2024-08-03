@@ -7,14 +7,14 @@ export const PaginationContainer = styled.div`
 `;
 
 export const PageNumber = styled.button<{ $isactive: boolean }>`
-  margin: 0 2px;
+  margin: 0 0.1rem;
   padding: 0.4rem 0.6rem;
   font-weight: 600;
   border: none;
   background-color: ${(props) => (props.$isactive ? '#ff7f0e' : 'transparent')};
   color: ${(props) => (props.$isactive ? 'white' : '#333')};
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 0.3rem;
 
   &:hover {
     background-color: ${(props) => (props.$isactive ? '#ff7f0e' : '#eaeaea')};
@@ -26,13 +26,13 @@ export const PageNumber = styled.button<{ $isactive: boolean }>`
 `;
 
 export const ArrowButton = styled.button`
-  margin: 0 2px;
+  margin: 0 0.1rem;
   padding: 0.4rem 0.6rem;
   border: none;
   background-color: transparent;
   color: #333;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 0.3rem;
 
   &:focus {
     outline: none;

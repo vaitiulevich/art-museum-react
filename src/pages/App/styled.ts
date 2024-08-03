@@ -1,3 +1,4 @@
+import { breakpoints } from '@constants/breakpoints';
 import styled from 'styled-components';
 
 export const AppComponent = styled.div`
@@ -10,12 +11,12 @@ export const AppComponent = styled.div`
     padding: 1rem 15%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     main {
       padding: 1rem 8%;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${breakpoints.mobile}px) {
     main {
       padding: 1rem 5%;
     }

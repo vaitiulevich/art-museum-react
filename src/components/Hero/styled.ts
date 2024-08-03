@@ -1,3 +1,4 @@
+import { breakpoints } from '@constants/breakpoints';
 import styled from 'styled-components';
 
 export const HeroTitle = styled.h1`
@@ -11,7 +12,7 @@ export const HeroTitle = styled.h1`
   span {
     color: #f17900;
   }
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     width: 100%;
   }
 `;

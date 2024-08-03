@@ -1,3 +1,4 @@
+import { breakpoints } from '@constants/breakpoints';
 import styled from 'styled-components';
 
 export const ArtworksGrid = styled.div`
@@ -8,18 +9,17 @@ export const ArtworksGrid = styled.div`
   gap: 0.7rem;
   justify-content: space-between;
 
-  @media (max-width: 450px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     grid-template-columns: 50% 50%;
   }
-  @media (max-width: 380px) {
+  @media (max-width: ${breakpoints.mobile}px) {
     grid-template-columns: 100%;
   }
 `;
 
 export const ArtworkImg = styled.div`
-  height: 65px;
+  height: 5rem;
   display: flex;
-  width: 25%;
   align-items: center;
   overflow: hidden;
   justify-content: center;
@@ -33,13 +33,17 @@ export const ArtworkCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-height: 100px;
+  max-height: 5.5rem;
   padding: 0.5rem;
   background-color: #fff;
-  border: solid 1px #f0f1f1;
+  border: solid 0.01rem #f0f1f1;
 
   .artwork-content {
     width: 70%;
-    margin-left: 10px;
+    margin-left: 1rem;
+  }
+
+  a {
+    width: 25%;
   }
 `;

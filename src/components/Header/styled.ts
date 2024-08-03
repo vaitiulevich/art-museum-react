@@ -1,3 +1,4 @@
+import { breakpoints } from '@constants/breakpoints';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
@@ -13,17 +14,17 @@ export const HeaderContainer = styled.header`
   );
   padding: 1rem 15%;
 
-  @media (max-width: 600px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     padding: 1rem 3%;
   }
 `;
 export const Logo = styled.div`
-  height: 40px;
+  height: 2.5rem;
 `;
 
 export const FavoriteMark = styled.div`
-  height: 25px;
-  margin-right: 5px;
+  height: 1.5rem;
+  margin-right: 0.5rem;
 `;
 
 export const HorizontalMenu = styled.nav`
@@ -46,14 +47,14 @@ export const BurgerMenuPanels = styled.div<{ open: boolean }>`
   width: 2rem;
   height: 2rem;
   position: ${({ open }) => (open ? 'fixed' : 'absolute')};
-  top: 15px;
-  right: 20px;
+  top: 1rem;
+  right: 2rem;
   display: none;
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 20;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     display: flex;
   }
 
@@ -61,8 +62,8 @@ export const BurgerMenuPanels = styled.div<{ open: boolean }>`
     width: 2rem;
     height: 0.25rem;
     background-color: #fff;
-    border-radius: 10px;
-    transform-origin: 1px;
+    border-radius: 1rem;
+    transform-origin: 0.01rem;
     transition: all 0.3s linear;
 
     &:nth-child(1) {
@@ -85,7 +86,7 @@ export const BurgerMenu = styled.nav<{ open: boolean }>`
   flex-direction: column;
   justify-content: flex-start;
   background: #333;
-  height: 100vh;
+  height: 100%;
   text-align: left;
   padding: 4rem 2rem 1rem 1rem;
   position: fixed;
@@ -95,7 +96,7 @@ export const BurgerMenu = styled.nav<{ open: boolean }>`
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
   z-index: 10;
 
-  @media (min-width: 769px) {
+  @media (min-width: ${breakpoints.tablet}px) {
     display: none;
   }
 

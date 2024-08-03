@@ -1,3 +1,4 @@
+import { breakpoints } from '@constants/breakpoints';
 import styled from 'styled-components';
 
 export const SpecialGalleryContainer = styled.section`
@@ -34,7 +35,7 @@ export const ArtworksGrid = styled.div`
   grid-template-columns: 32% 32% 32%;
   gap: 1rem;
 
-  @media (max-width: 450px) {
+  @media (max-width: ${breakpoints.mobile}px) {
     grid-template-columns: 100%;
   }
 `;

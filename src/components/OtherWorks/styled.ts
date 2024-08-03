@@ -30,6 +30,6 @@ export const Title = styled.h2`
 
 export const Select = styled.select`
   padding: 0.6rem 1rem;
-  border: 1px solid #dfdfdf;
-  margin-bottom: 10px;
+  border: 0.01rem solid #dfdfdf;
+  margin-bottom: 1rem;
 `;

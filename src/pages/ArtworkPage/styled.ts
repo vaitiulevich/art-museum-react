@@ -1,17 +1,18 @@
+import { breakpoints } from '@constants/breakpoints';
 import styled from 'styled-components';
 
 export const ArtworkPageContainer = styled.section`
   width: 100%;
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${breakpoints.tablet}px) {
     flex-wrap: wrap;
   }
 `;
 export const FavoriteMarkBlock = styled.div`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.5rem;
+  right: 0.5rem;
 `;
 
 export const ArtworkImg = styled.div`
@@ -19,8 +20,8 @@ export const ArtworkImg = styled.div`
   height: 100%;
   text-align: center;
 
-  max-height: 500px;
-  max-width: 600px;
+  max-height: 25rem;
+  max-width: 35rem;
   background-color: #80808033;
 
   img {
@@ -31,8 +32,8 @@ export const ArtworkImg = styled.div`
 
 export const ArtworkImgBlock = styled.div`
   position: relative;
-  margin-right: 20px;
-  @media (max-width: 768px) {
+  margin-right: 1rem;
+  @media (max-width: ${breakpoints.tablet}px) {
     margin-right: 0;
   }
 `;

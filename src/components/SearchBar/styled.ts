@@ -1,3 +1,4 @@
+import { breakpoints } from '@constants/breakpoints';
 import styled from 'styled-components';
 
 export const SearchContainer = styled.div`
@@ -24,16 +25,20 @@ export const SearchBarBlock = styled.div`
   flex-wrap: nowrap;
   background-color: #39393914;
   padding: 0.5rem;
-  border-radius: 16px;
+  border-radius: 1rem;
+
+  @media (max-width: ${breakpoints.mobile}px) {
+    width: 90%;
+  }
 `;
 
 export const SearchIcon = styled.div`
-  height: 30px;
+  height: 2rem;
   cursor: pointer;
 `;
 
 export const ErrorMessage = styled.p`
   color: red;
-  font-size: 12px;
+  font-size: 1rem;
   margin-top: 0;
 `;
