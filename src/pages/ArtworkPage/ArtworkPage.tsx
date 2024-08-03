@@ -1,11 +1,7 @@
 import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 import Loader from '@components/Loader/Loader';
-import {
-  ART_EDU_URL,
-  ART_IMG_URL,
-  ART_IMG_URL_POSTFIX,
-  ARTWORK_PAGE_FIELDS_QUERY,
-} from '@constants/urls';
+import { ART_EDU_URL, ARTWORK_PAGE_FIELDS_QUERY } from '@constants/urls';
+import useImgUrl from '@utils/hooks/useImgUrl';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -64,10 +60,6 @@ const ArtworkPage: React.FC = () => {
     fetchArtworkData();
   }, [id]);
 
-  const getImageUrl = (imageId: string) => {
-    return ART_IMG_URL + imageId + ART_IMG_URL_POSTFIX;
-  };
-
   return (
     <ArtworkPageContainer>
       {isLoading ? (
@@ -79,7 +71,7 @@ const ArtworkPage: React.FC = () => {
           <>
             <ArtworkImgBlock>
               <ArtworkImg>
-                <img src={getImageUrl(data.image_id)} alt={data.title} />
+                <img src={useImgUrl({ id: data.image_id })} alt={data.title} />
               </ArtworkImg>
               <FavoriteMarkBlock>
                 {id && <FavoriteMark id={+id} />}

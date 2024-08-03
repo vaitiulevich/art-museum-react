@@ -1,7 +1,7 @@
 import noImg from '@assets/icons/noImg.png';
 import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
 import { ROUTES } from '@constants/routes';
-import { ART_IMG_URL, ART_IMG_URL_POSTFIX } from '@constants/urls';
+import useImgUrl from '@utils/hooks/useImgUrl';
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -20,9 +20,6 @@ interface ArtworkProps {
 }
 
 const ArtworksCatalog: React.FC<ArtworkProps> = ({ artwork }) => {
-  const getImageUrl = (imageId: string) =>
-    ART_IMG_URL + imageId + ART_IMG_URL_POSTFIX;
-
   return (
     <ArtworksGrid>
       {artwork.map((art) => (
@@ -30,7 +27,7 @@ const ArtworksCatalog: React.FC<ArtworkProps> = ({ artwork }) => {
           <Link to={ROUTES.ARTWORK + art.id}>
             <ArtworkImg>
               {art.image_id ? (
-                <img src={getImageUrl(art.image_id)} alt={art.title} />
+                <img src={useImgUrl({ id: art.image_id })} alt={art.title} />
               ) : (
                 <img src={noImg} alt="no img" />
               )}
