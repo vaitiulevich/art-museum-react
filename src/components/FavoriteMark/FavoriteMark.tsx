@@ -16,29 +16,20 @@ const FavoriteMark: React.FC<FavoriteMarkProps> = ({ id }) => {
   const favourites = useSelector((state: RootState) => state.favourites.items);
 
   const isFavourited = favourites.includes(id);
-  console.log(id);
 
   const handleToggleFavourite = useCallback(() => {
     if (isFavourited) {
-      // dispatch(removeFavorite(id));
       dispatch({
         type: REMOVE_FAVORITE,
         payload: id,
       });
     } else {
-      // dispatch(addFavorite(id));
       dispatch({
         type: ADD_FAVORITE,
         payload: id,
       });
     }
   }, [id, isFavourited]);
-  //   if (isFavourited) {
-  //     dispatch(removeFavorite(id));
-  //   } else {
-  //     dispatch(addFavorite(id));
-  //   }
-  // }, [dispatch, id, isFavourited]);
 
   return (
     <FavoriteMarkContainer $isfavorite={isFavourited}>

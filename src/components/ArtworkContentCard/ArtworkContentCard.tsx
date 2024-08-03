@@ -1,4 +1,5 @@
 import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
+import { ROUTES } from '@constants/routes';
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -25,7 +26,7 @@ const ArtworkContentCard: React.FC<ArtworkProps> = ({ artwork }) => {
     <ArtworkContent className="artwork-content">
       <ArtworkInfo>
         <ArtworkTitle>
-          <Link to={'/artwork/' + artwork.id}>{artwork.title}</Link>
+          <Link to={ROUTES.ARTWORK + artwork.id}>{artwork.title}</Link>
         </ArtworkTitle>
         <ArtworkArtist>{artwork.artist_title}</ArtworkArtist>
         <ArtworDomain>

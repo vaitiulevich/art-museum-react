@@ -1,6 +1,11 @@
 import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 import Loader from '@components/Loader/Loader';
-import { ART_EDU_URL, ART_IMG_URL } from '@constants/constants';
+import {
+  ART_EDU_URL,
+  ART_IMG_URL,
+  ART_IMG_URL_POSTFIX,
+  ARTWORK_PAGE_FIELDS_QUERY,
+} from '@constants/urls';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -44,8 +49,7 @@ const ArtworkPage: React.FC = () => {
         setIsLoading(true);
         const { data: artworkData } = await axios.get(`${ART_EDU_URL}/${id}`, {
           params: {
-            fields:
-              'artist_title,artist_id,credit_line,date_end,date_start,dimensions,gallery_title,image_id,place_of_origin,title,is_public_domain',
+            fields: ARTWORK_PAGE_FIELDS_QUERY,
           },
         });
 
@@ -61,7 +65,7 @@ const ArtworkPage: React.FC = () => {
   }, [id]);
 
   const getImageUrl = (imageId: string) => {
-    return ART_IMG_URL + imageId + '/full/890,/0/default.jpg';
+    return ART_IMG_URL + imageId + ART_IMG_URL_POSTFIX;
   };
 
   return (

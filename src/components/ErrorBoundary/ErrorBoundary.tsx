@@ -1,4 +1,5 @@
 import logo from '@assets/icons/museum-logo-light.svg';
+import { ERR_BOUNDARY_MESS } from '@constants/messages';
 import React, { Component, ErrorInfo } from 'react';
 
 import { ErrorBoundaryComponent, ErrorBoundaryTitle } from './styled';
@@ -18,7 +19,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('ErrorBoundary caught an error: ', error, errorInfo);
+    console.error(ERR_BOUNDARY_MESS, error, errorInfo);
     this.setState({ hasError: true });
   }
 

@@ -1,9 +1,9 @@
 import noImg from '@assets/icons/noImg.png';
 import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
-import { ART_IMG_URL } from '@constants/constants';
+import { ART_IMG_URL, ART_IMG_URL_POSTFIX } from '@constants/urls';
 import React, { memo } from 'react';
 
-import { ArtworkCard,ArtworkImg, ArtworksGrid } from './styled';
+import { ArtworkCard, ArtworkImg, ArtworksGrid } from './styled';
 
 interface Artwork {
   id: number;
@@ -19,7 +19,7 @@ interface ArtworkProps {
 
 const ArtworksCatalog: React.FC<ArtworkProps> = ({ artwork }) => {
   const getImageUrl = (imageId: string) =>
-    `${ART_IMG_URL}${imageId}/full/890,/0/default.jpg`;
+    ART_IMG_URL + imageId + ART_IMG_URL_POSTFIX;
 
   return (
     <ArtworksGrid>

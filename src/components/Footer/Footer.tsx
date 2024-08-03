@@ -1,9 +1,9 @@
 import logoModsen from '@assets/icons/logo-modsen.svg';
 import logo from '@assets/icons/museum-logo-light.svg';
-import { MODSEN_URL } from '@constants/constants';
+import { MODSEN_URL } from '@constants/urls';
 import React from 'react';
 
-import { FooterContainer, Logo,ModsenLogo } from './styled';
+import { FooterContainer, Logo, ModsenLogo } from './styled';
 
 const Footer: React.FC = () => {
   return (

@@ -1,4 +1,5 @@
 import searchIcon from '@assets/icons/search.svg';
+import { VALID_LEAST_INPUT_MESS } from '@constants/messages';
 import {
   fetchArtworksFailure,
   fetchArtworksRequest,
@@ -20,10 +21,7 @@ import {
 } from './styled';
 
 const searchSchema = yup.object().shape({
-  query: yup
-    .string()
-    .trim()
-    .min(2, 'Search query must be at least 2 characters long'),
+  query: yup.string().trim().min(2, VALID_LEAST_INPUT_MESS),
 });
 
 const SearchBar: React.FC = () => {

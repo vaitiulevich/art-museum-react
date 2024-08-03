@@ -1,6 +1,7 @@
 import ArtworkCard from '@components/ArtworkCard/ArtworkCard';
 import Loader from '@components/Loader/Loader';
 import Pagination from '@components/Pagination/Pagination';
+import { SPEC_GALLERY_LIMIT } from '@constants/urls';
 import {
   fetchArtworksFailure,
   fetchArtworksRequest,
@@ -34,7 +35,7 @@ const SpecialGallery: React.FC = () => {
     dispatch(fetchArtworksRequest());
     try {
       const data: FetchArtworksResponse = await fetchArtworksApi({
-        limit: 3,
+        limit: SPEC_GALLERY_LIMIT,
         page: currentPage,
         query,
         isPublic: true,

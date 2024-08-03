@@ -1,4 +1,4 @@
-import { ART_EDU_URL } from '@constants/constants';
+import { ART_EDU_URL, FIELDS_QUERY } from '@constants/urls';
 import axios from 'axios';
 
 interface FetchArtworksParams {
@@ -25,7 +25,7 @@ export const fetchArtworksApi = async (params: FetchArtworksParams) => {
       page: params.page,
       q: params.query,
       ids: params.ids,
-      fields: 'id,title,artist_title,image_id,is_public_domain',
+      fields: FIELDS_QUERY,
     },
   });
   return response.data;

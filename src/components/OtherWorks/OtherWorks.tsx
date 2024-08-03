@@ -1,5 +1,6 @@
 import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
 import Loader from '@components/Loader/Loader';
+import { OTHER_WORKS_LIMIT } from '@constants/urls';
 import {
   FetchArtworksResponse,
   fetchMoreArtworksFailure,
@@ -34,7 +35,7 @@ const OtherWorks: React.FC = () => {
     dispatch(fetchMoreArtworksRequest());
     try {
       const data: FetchArtworksResponse = await fetchArtworksApi({
-        limit: 9,
+        limit: OTHER_WORKS_LIMIT,
         isSearchable: true,
         sort: sortBy,
       });
