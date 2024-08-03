@@ -12,6 +12,7 @@ export interface Theme {
     fillFavorite: string;
     linerGradientHeader: string;
     errMessage: string;
+    fillOverlay: string;
   };
   typography: {
     fontSize: {
@@ -43,6 +44,7 @@ export const globalTheme: Theme = {
     fill: '#FAFAFA',
     fontColor: '#393939',
     fillBase: '#fff',
+    fillOverlay: '#00000080',
     fillFrame: '#eaeaea',
     fillMenuPanel: '#343333',
     accentText: '#E0A449',

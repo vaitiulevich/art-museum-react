@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   width: 100%;
+  min-height: 5.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +19,7 @@ export const Logo = styled.div`
 `;
 
 export const FavoriteMark = styled.div`
-  height: 1.5rem;
+  height: 1.4rem;
   margin-right: 0.5rem;
 `;
 
@@ -38,12 +39,24 @@ export const HorizontalMenu = styled.nav`
   }
 `;
 
+export const Overlay = styled.div<{ open: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${(props) => props.theme.colors.fillOverlay};
+  z-index: 1;
+  opacity: ${(props) => (props.open ? 1 : 0)};
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  transition: all 0.3s;
+`;
+
 export const BurgerMenuPanels = styled.div<{ open: boolean }>`
   width: 2rem;
   height: 2rem;
-  position: ${({ open }) => (open ? 'fixed' : 'absolute')};
-  top: 1rem;
-  right: 2rem;
+  position: ${({ open }) => open && 'fixed'};
+  right: 1rem;
   display: none;
   justify-content: space-around;
   flex-flow: column nowrap;
@@ -77,7 +90,7 @@ export const BurgerMenuPanels = styled.div<{ open: boolean }>`
 `;
 
 export const BurgerMenu = styled.nav<{ open: boolean }>`
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: flex-start;
   background: ${(props) => props.theme.colors.fillMenuPanel};

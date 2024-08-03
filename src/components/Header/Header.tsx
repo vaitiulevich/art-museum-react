@@ -11,6 +11,7 @@ import {
   HeaderContainer,
   HorizontalMenu,
   Logo,
+  Overlay,
 } from './styled';
 
 const Header: React.FC = () => {
@@ -18,8 +19,11 @@ const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const handleClick = () => {
+  const handleOpenMenu = () => {
     setOpen(!open);
+  };
+  const handleCloseMenu = () => {
+    setOpen(false);
   };
 
   const handleResize = () => {
@@ -39,14 +43,15 @@ const Header: React.FC = () => {
       </Logo>
       {isMobile ? (
         <>
-          <BurgerMenuPanels open={open} onClick={handleClick}>
+          <Overlay open={open} onClick={handleCloseMenu} />
+          <BurgerMenuPanels open={open} onClick={handleOpenMenu}>
             <div />
             <div />
             <div />
           </BurgerMenuPanels>
           <BurgerMenu open={open}>
             {location.pathname !== '/' && (
-              <Link to={'/'} onClick={handleClick}>
+              <Link to={'/'} onClick={handleCloseMenu}>
                 <FavoriteMark>
                   <img src={home} alt="home" />
                 </FavoriteMark>
@@ -54,7 +59,7 @@ const Header: React.FC = () => {
               </Link>
             )}
 
-            <Link to={'/favorites'} onClick={handleClick}>
+            <Link to={'/favorites'} onClick={handleCloseMenu}>
               <FavoriteMark>
                 <img src={bookmark} alt="bookmark" />
               </FavoriteMark>
