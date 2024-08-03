@@ -1,6 +1,6 @@
 import LeftArrow from '@assets/icons/LeftArrow.svg';
 import RightArrow from '@assets/icons/RightArrow.svg';
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 
 import { ArrowButton, PageNumber, PaginationContainer } from './styled';
 
@@ -15,13 +15,16 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
-  const handlePageChange = (page: number) => {
-    if (page >= 1 && page <= totalPages) {
-      onPageChange(page);
-    }
-  };
+  const handlePageChange = useCallback(
+    (page: number) => {
+      if (page >= 1 && page <= totalPages) {
+        onPageChange(page);
+      }
+    },
+    [onPageChange, totalPages],
+  );
 
-  const renderPageNumbers = () => {
+  const renderPageNumbers = useCallback(() => {
     const pages = [];
     const startPage = currentPage;
     const endPage = Math.min(totalPages, currentPage + 3);
@@ -39,7 +42,7 @@ const Pagination: React.FC<PaginationProps> = ({
     }
 
     return pages;
-  };
+  }, [currentPage, totalPages, handlePageChange]);
 
   return (
     <PaginationContainer>

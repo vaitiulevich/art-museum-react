@@ -1,9 +1,10 @@
 import searchIcon from '@assets/icons/search.svg';
 import {
-  fetchArtworks,
+  fetchArtworksFailure,
+  fetchArtworksRequest,
   setCurrentPage,
   setQuery,
-} from '@store/slices/artworksSlice';
+} from '@store/actions/artworksActions';
 import debounce from 'lodash.debounce';
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -35,39 +36,30 @@ const SearchBar: React.FC = () => {
     debounce(async (searchQuery: string) => {
       if (searchQuery.trim() === '') {
         setSearchQuery('');
-        dispatch(setCurrentPage(1));
-        dispatch(setQuery(searchQuery));
-        dispatch(
-          fetchArtworks({
-            limit: 3,
-            page: 1,
-            query: searchQuery,
-            isSearchable: true,
-          }),
-        );
+        loadArtworks(searchQuery);
         return;
       }
       try {
         await searchSchema.validate({ query: searchQuery });
-        setValidationError(null);
-        dispatch(setCurrentPage(1));
-        dispatch(setQuery(searchQuery));
-        dispatch(
-          fetchArtworks({
-            limit: 3,
-            page: 1,
-            query: searchQuery,
-            isSearchable: true,
-          }),
-        );
+        loadArtworks(searchQuery);
       } catch (error) {
         if (error instanceof yup.ValidationError) {
           setValidationError(error.message);
         }
       }
     }, 2000),
-    [dispatch],
+    [query],
   );
+
+  const loadArtworks = async (searchQuery: string) => {
+    dispatch(setCurrentPage(1));
+    dispatch(setQuery(searchQuery));
+    try {
+      dispatch(fetchArtworksRequest());
+    } catch (error) {
+      dispatch(fetchArtworksFailure((error as Error).message));
+    }
+  };
 
   const onSetSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);

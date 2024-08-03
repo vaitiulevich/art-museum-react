@@ -23,6 +23,7 @@ export const ArtworkImg = styled.div`
   align-items: center;
   overflow: hidden;
   justify-content: center;
+  background-color: #eaeaea;
 `;
 
 export const ArtworkCard = styled.div`

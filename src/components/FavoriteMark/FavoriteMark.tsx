@@ -1,8 +1,9 @@
 import bookmark from '@assets/icons/bookmark.svg';
+import { ADD_FAVORITE, REMOVE_FAVORITE } from '@store/actions/favoriteActions';
+// import { addFavorite, removeFavorite } from 'store/slices/favouritesSlice';
+import { RootState } from '@store/store';
 import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavorite, removeFavorite } from 'store/slices/favouritesSlice';
-import { RootState } from 'store/store';
 
 import { FavoriteMarkContainer } from './styled';
 
@@ -15,14 +16,29 @@ const FavoriteMark: React.FC<FavoriteMarkProps> = ({ id }) => {
   const favourites = useSelector((state: RootState) => state.favourites.items);
 
   const isFavourited = favourites.includes(id);
+  console.log(id);
 
   const handleToggleFavourite = useCallback(() => {
     if (isFavourited) {
-      dispatch(removeFavorite(id));
+      // dispatch(removeFavorite(id));
+      dispatch({
+        type: REMOVE_FAVORITE,
+        payload: id,
+      });
     } else {
-      dispatch(addFavorite(id));
+      // dispatch(addFavorite(id));
+      dispatch({
+        type: ADD_FAVORITE,
+        payload: id,
+      });
     }
-  }, [dispatch, id, isFavourited]);
+  }, [id, isFavourited]);
+  //   if (isFavourited) {
+  //     dispatch(removeFavorite(id));
+  //   } else {
+  //     dispatch(addFavorite(id));
+  //   }
+  // }, [dispatch, id, isFavourited]);
 
   return (
     <FavoriteMarkContainer $isfavorite={isFavourited}>

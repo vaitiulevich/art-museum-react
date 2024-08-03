@@ -1,10 +1,16 @@
 import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
 import Loader from '@components/Loader/Loader';
-import React, { useEffect, useState } from 'react';
+import {
+  FetchArtworksResponse,
+  fetchMoreArtworksFailure,
+  fetchMoreArtworksRequest,
+  fetchMoreArtworksSuccess,
+} from '@store/actions/artworksActions';
+import { AppDispatch, RootState } from '@store/store';
+import { fetchArtworksApi } from '@utils/api';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchMoreArtworks } from '../../store/slices/artworksSlice';
-import { AppDispatch,RootState } from '../../store/store';
 import {
   OtherWorksContainer,
   OtherWorksHeadline,
@@ -21,8 +27,22 @@ const OtherWorks: React.FC = () => {
   const [sortBy, setSortBy] = useState<string>('');
 
   useEffect(() => {
-    dispatch(fetchMoreArtworks({ limit: 9, isSearchable: true, sort: sortBy }));
-  }, [dispatch, sortBy]);
+    loadMoreArtworks();
+  }, [sortBy]);
+
+  const loadMoreArtworks = useCallback(async () => {
+    dispatch(fetchMoreArtworksRequest());
+    try {
+      const data: FetchArtworksResponse = await fetchArtworksApi({
+        limit: 9,
+        isSearchable: true,
+        sort: sortBy,
+      });
+      dispatch(fetchMoreArtworksSuccess(data));
+    } catch (error) {
+      dispatch(fetchMoreArtworksFailure((error as Error).message));
+    }
+  }, [sortBy]);
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortBy(e.target.value);
@@ -53,4 +73,4 @@ const OtherWorks: React.FC = () => {
   );
 };
 
-export default OtherWorks;
+export default memo(OtherWorks);

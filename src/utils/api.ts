@@ -2,7 +2,7 @@ import { ART_EDU_URL } from '@constants/constants';
 import axios from 'axios';
 
 interface FetchArtworksParams {
-  limit: number;
+  limit?: number;
   page?: number;
   query?: string;
   ids?: string;

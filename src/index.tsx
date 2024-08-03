@@ -6,7 +6,7 @@ import Home from '@pages/Home/Home';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { HashRouter as Router,Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 import reportWebVitals from './reportWebVitals';
 import store from './store/store';
