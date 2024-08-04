@@ -10,7 +10,7 @@ export default function Routing(): ReactElement {
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/favorites" element={<FavouritesPage />} />
           <Route path="/artwork/:id" element={<ArtworkPage />} />
         </Route>

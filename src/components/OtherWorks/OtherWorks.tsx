@@ -12,6 +12,7 @@ import {
   Title,
 } from './styled';
 import { loadMoreArtworks } from '@utils/otherWorks.uils';
+import { sortOptions } from '@constants/sortOptions';
 
 const OtherWorks: React.FC = () => {
   const { moreArtworks, isLoadingMoreArtworks, error } = useSelector(
@@ -39,10 +40,11 @@ const OtherWorks: React.FC = () => {
       ) : (
         <>
           <Select onChange={handleSortChange} value={sortBy}>
-            <option value="">Sort by default</option>
-            <option value="is_public_domain">With privat domain</option>
-            <option value="date_start">Sort by Established Date</option>
-            <option value="id">Sort by ID</option>
+            {sortOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </Select>
           <ArtworksCatalog artwork={moreArtworks} />
         </>
