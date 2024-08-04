@@ -1,16 +1,8 @@
 import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
 import Loader from '@components/Loader/Loader';
-import { OTHER_WORKS_LIMIT } from '@constants/urls';
-import {
-  FetchArtworksResponse,
-  fetchMoreArtworksFailure,
-  fetchMoreArtworksRequest,
-  fetchMoreArtworksSuccess,
-} from '@store/actions/artworksActions';
-import { AppDispatch, RootState } from '@store/store';
-import { fetchArtworksApi } from '@utils/api';
-import React, { memo, useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@store/store';
+import React, { memo, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import {
   OtherWorksContainer,
@@ -19,30 +11,16 @@ import {
   SubTitle,
   Title,
 } from './styled';
+import { loadMoreArtworks } from '@utils/otherWorks.uils';
 
 const OtherWorks: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
   const { moreArtworks, isLoadingMoreArtworks, error } = useSelector(
     (state: RootState) => state.artworks,
   );
   const [sortBy, setSortBy] = useState<string>('');
 
   useEffect(() => {
-    loadMoreArtworks();
-  }, [sortBy]);
-
-  const loadMoreArtworks = useCallback(async () => {
-    dispatch(fetchMoreArtworksRequest());
-    try {
-      const data: FetchArtworksResponse = await fetchArtworksApi({
-        limit: OTHER_WORKS_LIMIT,
-        isSearchable: true,
-        sort: sortBy,
-      });
-      dispatch(fetchMoreArtworksSuccess(data));
-    } catch (error) {
-      dispatch(fetchMoreArtworksFailure((error as Error).message));
-    }
+    loadMoreArtworks(sortBy);
   }, [sortBy]);
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

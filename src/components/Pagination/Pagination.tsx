@@ -2,6 +2,7 @@ import { images } from '@constants/images';
 import React, { memo, useCallback } from 'react';
 
 import { ArrowButton, PageNumber, PaginationContainer } from './styled';
+import { generatePageNumbers } from '@utils/pagination.utils';
 
 interface PaginationProps {
   currentPage: number;
@@ -23,25 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({
     [onPageChange, totalPages],
   );
 
-  const renderPageNumbers = useCallback(() => {
-    const pages = [];
-    const startPage = currentPage;
-    const endPage = Math.min(totalPages, currentPage + 3);
-
-    for (let i = startPage; i <= endPage; i++) {
-      pages.push(
-        <PageNumber
-          key={i}
-          $isactive={i === currentPage}
-          onClick={() => handlePageChange(i)}
-        >
-          {i}
-        </PageNumber>,
-      );
-    }
-
-    return pages;
-  }, [currentPage, totalPages, handlePageChange]);
+  const pageNumbers = generatePageNumbers(currentPage, totalPages);
 
   return (
     <PaginationContainer>
@@ -51,7 +34,15 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         <img src={images.leftArrow} alt="previous" />
       </ArrowButton>
-      {renderPageNumbers()}
+      {pageNumbers.map((page) => (
+        <PageNumber
+          key={page}
+          $isactive={page === currentPage}
+          onClick={() => handlePageChange(page)}
+        >
+          {page}
+        </PageNumber>
+      ))}
       <ArrowButton
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}

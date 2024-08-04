@@ -1,8 +1,6 @@
 import FavoriteMark from '@components/FavoriteMark/FavoriteMark';
 import Loader from '@components/Loader/Loader';
-import { ART_EDU_URL, ARTWORK_PAGE_FIELDS_QUERY } from '@constants/urls';
 import useImgUrl from '@utils/hooks/useImgUrl';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -19,6 +17,7 @@ import {
   ArtworkPageContainer,
   FavoriteMarkBlock,
 } from './styled';
+import { fetchArtworkData } from '@utils/artworkPage.utils';
 
 interface ArtworkProps {
   title: string;
@@ -40,24 +39,7 @@ const ArtworkPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchArtworkData = async () => {
-      try {
-        setIsLoading(true);
-        const { data: artworkData } = await axios.get(`${ART_EDU_URL}/${id}`, {
-          params: {
-            fields: ARTWORK_PAGE_FIELDS_QUERY,
-          },
-        });
-
-        setData(artworkData.data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchArtworkData();
+    id && fetchArtworkData(id, setData, setIsLoading);
   }, [id]);
 
   return (

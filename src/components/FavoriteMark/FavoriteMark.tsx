@@ -1,33 +1,20 @@
 import { images } from '@constants/images';
-import { ADD_FAVORITE, REMOVE_FAVORITE } from '@store/actions/favoriteActions';
 import { RootState } from '@store/store';
 import React, { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { FavoriteMarkContainer } from './styled';
+import { toggleFavorite } from '@utils/favorite.utils';
 
 interface FavoriteMarkProps {
   id: number;
 }
 
 const FavoriteMark: React.FC<FavoriteMarkProps> = ({ id }) => {
-  const dispatch = useDispatch();
   const favourites = useSelector((state: RootState) => state.favourites.items);
-
   const isFavourited = favourites.includes(id);
-
   const handleToggleFavourite = useCallback(() => {
-    if (isFavourited) {
-      dispatch({
-        type: REMOVE_FAVORITE,
-        payload: id,
-      });
-    } else {
-      dispatch({
-        type: ADD_FAVORITE,
-        payload: id,
-      });
-    }
+    toggleFavorite(id, isFavourited);
   }, [id, isFavourited]);
 
   return (

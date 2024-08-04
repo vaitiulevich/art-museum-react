@@ -1,11 +1,9 @@
 import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
 import Loader from '@components/Loader/Loader';
 import { images } from '@constants/images';
-import { fetchFavouritesSuccess } from '@store/actions/favoriteActions';
-import { AppDispatch, RootState } from '@store/store';
-import { fetchArtworksApi } from '@utils/api';
+import { RootState } from '@store/store';
 import React, { useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import {
   CatalogSubTitle,
@@ -16,9 +14,9 @@ import {
   SubTitle,
   Title,
 } from './styled';
+import { loadFavourites } from '@utils/favorite.utils';
 
 const FavouritesPage: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
   const { favourites, items } = useSelector(
     (state: RootState) => state.favourites,
   );
@@ -28,25 +26,8 @@ const FavouritesPage: React.FC = () => {
   const isEmpty = useMemo(() => items.length === 0, [items]);
 
   useEffect(() => {
-    loadFavourites();
+    loadFavourites(items, setLoading, setError);
   }, [items, isEmpty]);
-  const loadFavourites = async () => {
-    if (!isEmpty) {
-      setLoading(true);
-      setError(null);
-      try {
-        const response = await fetchArtworksApi({
-          ids: items.join(','),
-          isSearchable: false,
-        });
-        dispatch(fetchFavouritesSuccess(response.data));
-      } catch (error) {
-        setError((error as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
 
   return (
     <FavouritesContainer>

@@ -1,19 +1,10 @@
 import ArtworkCard from '@components/ArtworkCard/ArtworkCard';
 import Loader from '@components/Loader/Loader';
 import Pagination from '@components/Pagination/Pagination';
-import { SPEC_GALLERY_LIMIT } from '@constants/urls';
-import {
-  fetchArtworksFailure,
-  fetchArtworksRequest,
-  FetchArtworksResponse,
-  fetchArtworksSuccess,
-  setCurrentPage,
-} from '@store/actions/artworksActions';
-import { fetchArtworksApi } from '@utils/api';
 import React, { memo, useCallback, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { AppDispatch, RootState } from '../../store/store';
+import { RootState } from '../../store/store';
 import {
   ArtworksGrid,
   SpecialGalleryContainer,
@@ -21,35 +12,19 @@ import {
   SubTitle,
   Title,
 } from './styled';
+import { loadArtworks, onPageChange } from '@utils/specialGallery.utils';
 
 const SpecialGallery: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
   const { artworks, isLoading, error, currentPage, totalPages, query } =
     useSelector((state: RootState) => state.artworks);
 
   useEffect(() => {
-    loadArtworks();
+    loadArtworks(currentPage, query);
   }, [currentPage, query]);
-
-  const loadArtworks = async () => {
-    dispatch(fetchArtworksRequest());
-    try {
-      const data: FetchArtworksResponse = await fetchArtworksApi({
-        limit: SPEC_GALLERY_LIMIT,
-        page: currentPage,
-        query,
-        isPublic: true,
-        isSearchable: true,
-      });
-      dispatch(fetchArtworksSuccess(data));
-    } catch (error) {
-      dispatch(fetchArtworksFailure((error as Error).message));
-    }
-  };
 
   const handlePageChange = useCallback(
     (page: number) => {
-      dispatch(setCurrentPage(page));
+      onPageChange(page);
     },
     [currentPage],
   );
