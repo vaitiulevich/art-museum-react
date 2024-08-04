@@ -1,7 +1,6 @@
 import { images } from '@constants/images';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '@assets/icons/home.svg';
 
 import {
   BurgerMenu,
@@ -12,11 +11,13 @@ import {
   Logo,
   Overlay,
 } from './styled';
+import useWindowSize from '@utils/hooks/useWindowSize';
 
 const Header: React.FC = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const { width } = useWindowSize();
+  const [isMobile, setIsMobile] = useState(width <= 768);
 
   const handleOpenMenu = () => {
     setOpen(!open);
@@ -24,17 +25,9 @@ const Header: React.FC = () => {
   const handleCloseMenu = () => {
     setOpen(false);
   };
-
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
-
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+    setIsMobile(width <= 768);
+  }, [width]);
 
   return (
     <HeaderContainer>
