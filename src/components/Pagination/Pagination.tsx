@@ -3,20 +3,18 @@ import React, { memo, useCallback } from 'react';
 
 import { ArrowButton, PageNumber, PaginationContainer } from './styled';
 import { generatePageNumbers } from '@utils/pagination.utils';
-
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
+import {
+  PageChangeProps,
+  PaginationProps,
+} from 'interfaces/pagination.interface';
 
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   totalPages,
   onPageChange,
 }) => {
-  const handlePageChange = useCallback(
-    (page: number) => {
+  const handlePageChange: PageChangeProps = useCallback(
+    (page) => {
       if (page >= 1 && page <= totalPages) {
         onPageChange(page);
       }

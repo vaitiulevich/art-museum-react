@@ -10,16 +10,7 @@ import {
   ArtworkInfo,
   ArtworkTitle,
 } from './styled';
-
-interface ArtworkProps {
-  artwork: {
-    id: number;
-    title: string;
-    artist_title: string;
-    image_id: string;
-    is_public_domain: boolean;
-  };
-}
+import { ArtworkProps } from 'interfaces/artwork.interface';
 
 const ArtworkContentCard: React.FC<ArtworkProps> = ({ artwork }) => {
   return (

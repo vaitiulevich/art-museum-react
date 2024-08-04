@@ -1,27 +1,12 @@
+import { FavouritesState } from 'interfaces/favorite.interface';
 import {
   ADD_FAVORITE,
-  FavouritesActionTypes,
   FETCH_FAVOURITES_FAILURE,
   FETCH_FAVOURITES_REQUEST,
   FETCH_FAVOURITES_SUCCESS,
   REMOVE_FAVORITE,
-} from '../actions/favoriteActions';
-
-interface favouriteItem {
-  id: number;
-  title: string;
-  artist_title: string;
-  image_id: string;
-  is_public_domain: boolean;
-}
-
-interface FavouritesState {
-  items: number[];
-  favourites: favouriteItem[];
-  isLoadingFavourites: boolean;
-  error: string;
-}
-
+} from '@constants/actionTypes';
+import { FavouritesActionTypes } from 'interfaces/favoriteAction.interface';
 const initialState: FavouritesState = {
   items: JSON.parse(localStorage.getItem('favourites') || '[]'),
   isLoadingFavourites: false,

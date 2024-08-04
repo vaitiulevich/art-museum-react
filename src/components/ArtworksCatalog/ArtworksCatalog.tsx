@@ -6,20 +6,9 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ArtworkCard, ArtworkImg, ArtworksGrid } from './styled';
+import { ArtworkCatalogProps } from 'interfaces/artwork.interface';
 
-interface Artwork {
-  id: number;
-  title: string;
-  artist_title: string;
-  image_id: string;
-  is_public_domain: boolean;
-}
-
-interface ArtworkProps {
-  artwork: Artwork[];
-}
-
-const ArtworksCatalog: React.FC<ArtworkProps> = ({ artwork }) => {
+const ArtworksCatalog: React.FC<ArtworkCatalogProps> = ({ artwork }) => {
   return (
     <ArtworksGrid>
       {artwork.map((art) => (

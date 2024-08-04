@@ -1,86 +1,24 @@
-export const FETCH_ARTWORKS_REQUEST = 'FETCH_ARTWORKS_REQUEST';
-export const FETCH_ARTWORKS_SUCCESS = 'FETCH_ARTWORKS_SUCCESS';
-export const FETCH_ARTWORKS_FAILURE = 'FETCH_ARTWORKS_FAILURE';
-
-export const FETCH_MORE_ARTWORKS_REQUEST = 'FETCH_MORE_ARTWORKS_REQUEST';
-export const FETCH_MORE_ARTWORKS_SUCCESS = 'FETCH_MORE_ARTWORKS_SUCCESS';
-export const FETCH_MORE_ARTWORKS_FAILURE = 'FETCH_MORE_ARTWORKS_FAILURE';
-
-export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-export const SET_QUERY = 'SET_QUERY';
-
-export interface Artwork {
-  id: number;
-  title: string;
-  artist_title: string;
-  image_id: string;
-  is_public_domain: boolean;
-}
-
-export interface FetchArtworksResponse {
-  data: Artwork[];
-  pagination: {
-    total_pages: number;
-  };
-}
-
-export interface FetchArtworksParams {
-  limit: number;
-  page?: number;
-  query?: string;
-  ids?: string;
-  isPublic?: boolean;
-  isSearchable?: boolean;
-  sort?: string;
-}
-
-export interface FetchArtworksRequestAction {
-  type: typeof FETCH_ARTWORKS_REQUEST;
-}
-
-export interface FetchArtworksSuccessAction {
-  type: typeof FETCH_ARTWORKS_SUCCESS;
-  payload: FetchArtworksResponse;
-}
-
-export interface FetchArtworksFailureAction {
-  type: typeof FETCH_ARTWORKS_FAILURE;
-  payload: string;
-}
-
-export interface FetchMoreArtworksRequestAction {
-  type: typeof FETCH_MORE_ARTWORKS_REQUEST;
-}
-
-export interface FetchMoreArtworksSuccessAction {
-  type: typeof FETCH_MORE_ARTWORKS_SUCCESS;
-  payload: FetchArtworksResponse;
-}
-
-export interface FetchMoreArtworksFailureAction {
-  type: typeof FETCH_MORE_ARTWORKS_FAILURE;
-  payload: string;
-}
-
-export interface SetCurrentPageAction {
-  type: typeof SET_CURRENT_PAGE;
-  payload: number;
-}
-
-export interface SetQueryAction {
-  type: typeof SET_QUERY;
-  payload: string;
-}
-
-export type ArtworksActionTypes =
-  | FetchArtworksRequestAction
-  | FetchArtworksSuccessAction
-  | FetchArtworksFailureAction
-  | FetchMoreArtworksRequestAction
-  | FetchMoreArtworksSuccessAction
-  | FetchMoreArtworksFailureAction
-  | SetCurrentPageAction
-  | SetQueryAction;
+import {
+  FETCH_ARTWORKS_FAILURE,
+  FETCH_ARTWORKS_REQUEST,
+  FETCH_ARTWORKS_SUCCESS,
+  FETCH_MORE_ARTWORKS_FAILURE,
+  FETCH_MORE_ARTWORKS_REQUEST,
+  FETCH_MORE_ARTWORKS_SUCCESS,
+  SET_CURRENT_PAGE,
+  SET_QUERY,
+} from '@constants/actionTypes';
+import { FetchArtworksResponse } from 'interfaces/artwork.interface';
+import {
+  FetchArtworksFailureAction,
+  FetchArtworksRequestAction,
+  FetchArtworksSuccessAction,
+  FetchMoreArtworksFailureAction,
+  FetchMoreArtworksRequestAction,
+  FetchMoreArtworksSuccessAction,
+  SetCurrentPageAction,
+  SetQueryAction,
+} from 'interfaces/artworkAction.interface';
 
 export const fetchArtworksRequest = (): FetchArtworksRequestAction => ({
   type: FETCH_ARTWORKS_REQUEST,

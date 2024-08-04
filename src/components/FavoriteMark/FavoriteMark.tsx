@@ -5,10 +5,7 @@ import { useSelector } from 'react-redux';
 
 import { FavoriteMarkContainer } from './styled';
 import { toggleFavorite } from '@utils/favorite.utils';
-
-interface FavoriteMarkProps {
-  id: number;
-}
+import { FavoriteMarkProps } from 'interfaces/favorite.interface';
 
 const FavoriteMark: React.FC<FavoriteMarkProps> = ({ id }) => {
   const favourites = useSelector((state: RootState) => state.favourites.items);

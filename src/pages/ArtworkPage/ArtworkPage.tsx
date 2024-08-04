@@ -18,24 +18,11 @@ import {
   FavoriteMarkBlock,
 } from './styled';
 import { fetchArtworkData } from '@utils/artworkPage.utils';
-
-interface ArtworkProps {
-  title: string;
-  artist_title: string;
-  artist_id: number;
-  image_id: string;
-  artist_nacionality: string;
-  date_end: number;
-  date_start: number;
-  credit_line: string;
-  dimensions: string;
-  place_of_origin: string;
-  is_public_domain: boolean;
-}
+import { ArtworkItemProps } from 'interfaces/artwork.interface';
 
 const ArtworkPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [data, setData] = useState<ArtworkProps | null>(null);
+  const [data, setData] = useState<ArtworkItemProps | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

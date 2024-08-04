@@ -1,12 +1,12 @@
 import store from '@store/store';
 import { fetchArtworksApi } from '@utils/api';
 import {
-  FetchArtworksResponse,
   fetchMoreArtworksFailure,
   fetchMoreArtworksRequest,
   fetchMoreArtworksSuccess,
 } from '@store/actions/artworksActions';
 import { OTHER_WORKS_LIMIT } from '@constants/urls';
+import { FetchArtworksResponse } from 'interfaces/artwork.interface';
 
 const dispatch = store.dispatch;
 

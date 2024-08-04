@@ -1,6 +1,6 @@
 import debounce from 'lodash.debounce';
 import * as yup from 'yup';
-import store, { AppDispatch } from '@store/store';
+import store from '@store/store';
 import {
   fetchArtworksFailure,
   fetchArtworksRequest,

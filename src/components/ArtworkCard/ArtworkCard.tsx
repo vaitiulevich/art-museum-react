@@ -1,4 +1,3 @@
-// import noImg from '@assets/icons/noImg.png';
 import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
 import { images } from '@constants/images';
 import { ROUTES } from '@constants/routes';
@@ -7,16 +6,7 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ArtworkCardContainer, ArtworkContent, ArtworkImg } from './styled';
-
-interface ArtworkProps {
-  artwork: {
-    id: number;
-    title: string;
-    artist_title: string;
-    image_id: string;
-    is_public_domain: boolean;
-  };
-}
+import { ArtworkProps } from 'interfaces/artwork.interface';
 
 const ArtworkCard: React.FC<ArtworkProps> = ({ artwork }) => {
   return (

@@ -13,6 +13,7 @@ import {
   Title,
 } from './styled';
 import { loadArtworks, onPageChange } from '@utils/specialGallery.utils';
+import { PageChangeProps } from 'interfaces/pagination.interface';
 
 const SpecialGallery: React.FC = () => {
   const { artworks, isLoading, error, currentPage, totalPages, query } =
@@ -22,13 +23,14 @@ const SpecialGallery: React.FC = () => {
     loadArtworks(currentPage, query);
   }, [currentPage, query]);
 
-  const handlePageChange = useCallback(
-    (page: number) => {
-      onPageChange(page);
+  const handlePageChange: PageChangeProps = useCallback(
+    (page) => {
+      if (page >= 1 && page <= totalPages) {
+        onPageChange(page);
+      }
     },
-    [currentPage],
+    [totalPages, currentPage],
   );
-
   return (
     <SpecialGalleryContainer>
       <SpecialGalleryHeadline>

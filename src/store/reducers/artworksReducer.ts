@@ -1,6 +1,5 @@
+import { ArtworksInitialState } from 'interfaces/artwork.interface';
 import {
-  Artwork,
-  ArtworksActionTypes,
   FETCH_ARTWORKS_FAILURE,
   FETCH_ARTWORKS_REQUEST,
   FETCH_ARTWORKS_SUCCESS,
@@ -9,20 +8,10 @@ import {
   FETCH_MORE_ARTWORKS_SUCCESS,
   SET_CURRENT_PAGE,
   SET_QUERY,
-} from '../actions/artworksActions';
+} from '@constants/actionTypes';
+import { ArtworksActionTypes } from 'interfaces/artworkAction.interface';
 
-interface ArtworksState {
-  artworks: Artwork[];
-  moreArtworks: Artwork[];
-  isLoading: boolean;
-  isLoadingMoreArtworks: boolean;
-  error: string | null;
-  totalPages: number;
-  currentPage: number;
-  query: string;
-}
-
-const initialState: ArtworksState = {
+const initialState: ArtworksInitialState = {
   artworks: [],
   moreArtworks: [],
   isLoading: false,
@@ -36,7 +25,7 @@ const initialState: ArtworksState = {
 const artworksReducer = (
   state = initialState,
   action: ArtworksActionTypes,
-): ArtworksState => {
+): ArtworksInitialState => {
   switch (action.type) {
     case FETCH_ARTWORKS_REQUEST:
       return {

@@ -1,15 +1,6 @@
 import { ART_EDU_URL, FIELDS_QUERY } from '@constants/urls';
 import axios from 'axios';
-
-interface FetchArtworksParams {
-  limit?: number;
-  page?: number;
-  query?: string;
-  ids?: string;
-  isPublic?: boolean;
-  isSearchable?: boolean;
-  sort?: string;
-}
+import { FetchArtworksParams } from 'interfaces/artwork.interface';
 
 export const fetchArtworksApi = async (params: FetchArtworksParams) => {
   const isSearch = params.isSearchable ? '/search?' : '';

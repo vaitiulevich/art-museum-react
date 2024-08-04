@@ -1,12 +1,9 @@
-import { FetchArtworksResponse } from '@store/actions/artworksActions';
-import {
-  ADD_FAVORITE,
-  fetchFavouritesSuccess,
-  REMOVE_FAVORITE,
-} from '@store/actions/favoriteActions';
+import { fetchFavouritesSuccess } from '@store/actions/favoriteActions';
+import { ADD_FAVORITE, REMOVE_FAVORITE } from '@constants/actionTypes';
 import store from '@store/store';
 import { Dispatch, SetStateAction } from 'react';
 import { fetchArtworksApi } from './api';
+import { FetchArtworksResponse } from 'interfaces/artwork.interface';
 
 const dispatch = store.dispatch;
 

@@ -4,10 +4,10 @@ import {
   fetchArtworksFailure,
   fetchArtworksRequest,
   fetchArtworksSuccess,
-  FetchArtworksResponse,
   setCurrentPage,
 } from '@store/actions/artworksActions';
 import { SPEC_GALLERY_LIMIT } from '@constants/urls';
+import { FetchArtworksResponse } from 'interfaces/artwork.interface';
 
 const dispatch = store.dispatch;
 
