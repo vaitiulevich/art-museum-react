@@ -1,5 +1,4 @@
-import logoModsen from '@assets/icons/logo-modsen.svg';
-import logo from '@assets/icons/museum-logo-light.svg';
+import { images } from '@constants/images';
 import { MODSEN_URL } from '@constants/urls';
 import React from 'react';
 
@@ -9,11 +8,11 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <Logo>
-        <img src={logo} alt="museum art" />
+        <img src={images.logoLight} alt="museum art" />
       </Logo>
       <ModsenLogo>
         <a href={MODSEN_URL}>
-          <img src={logoModsen} alt="modsen" />
+          <img src={images.logoModsen} alt="modsen" />
         </a>
       </ModsenLogo>
     </FooterContainer>

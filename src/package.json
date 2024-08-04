@@ -93,6 +93,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.7",
+    "mime-types": "^2.1.35",
     "prettier": "^3.3.3",
     "redux": "^5.0.1",
     "redux-mock-store": "^1.5.4",

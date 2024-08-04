@@ -1,6 +1,5 @@
-import bookmark from '@assets/icons/bookmark.svg';
+import { images } from '@constants/images';
 import { ADD_FAVORITE, REMOVE_FAVORITE } from '@store/actions/favoriteActions';
-// import { addFavorite, removeFavorite } from 'store/slices/favouritesSlice';
 import { RootState } from '@store/store';
 import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,7 +33,7 @@ const FavoriteMark: React.FC<FavoriteMarkProps> = ({ id }) => {
   return (
     <FavoriteMarkContainer $isfavorite={isFavourited}>
       <div onClick={handleToggleFavourite}>
-        <img src={bookmark} alt="Bookmark icon" />
+        <img src={images.bookmarkIcon} alt="Bookmark icon" />
       </div>
     </FavoriteMarkContainer>
   );

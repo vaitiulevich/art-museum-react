@@ -1,8 +1,7 @@
-import favIcon from '@assets/icons/iconFavourites.svg';
 import ArtworksCatalog from '@components/ArtworksCatalog/ArtworksCatalog';
 import Loader from '@components/Loader/Loader';
+import { images } from '@constants/images';
 import { fetchFavouritesSuccess } from '@store/actions/favoriteActions';
-// import { addFavorite, removeFavorite } from '@store/actions/favouritesActions';
 import { AppDispatch, RootState } from '@store/store';
 import { fetchArtworksApi } from '@utils/api';
 import React, { useEffect, useMemo, useState } from 'react';
@@ -54,7 +53,7 @@ const FavouritesPage: React.FC = () => {
       <FavouritesHeadline>
         <Title>Here Are Your</Title>
         <SubTitle>
-          <img src={favIcon} alt="favourites" />
+          <img src={images.favoriteIcon} alt="favourites" />
           <span>Favorites</span>
         </SubTitle>
       </FavouritesHeadline>

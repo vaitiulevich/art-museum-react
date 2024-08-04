@@ -1,5 +1,4 @@
-import LeftArrow from '@assets/icons/LeftArrow.svg';
-import RightArrow from '@assets/icons/RightArrow.svg';
+import { images } from '@constants/images';
 import React, { memo, useCallback } from 'react';
 
 import { ArrowButton, PageNumber, PaginationContainer } from './styled';
@@ -50,14 +49,14 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <img src={LeftArrow} alt="previous" />
+        <img src={images.leftArrow} alt="previous" />
       </ArrowButton>
       {renderPageNumbers()}
       <ArrowButton
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        <img src={RightArrow} alt="next" />
+        <img src={images.rightArrow} alt="next" />
       </ArrowButton>
     </PaginationContainer>
   );

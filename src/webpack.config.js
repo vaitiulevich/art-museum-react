@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const mimeTypes = require('mime-types');
 
 module.exports = (env) => {
   const isProd = env.production;
@@ -46,12 +47,24 @@ module.exports = (env) => {
           use: ['style-loader', 'css-loader'],
         },
         {
-          test: /\.(png|jpg|gif|svg)$/,
+          test: /\.(png|jpg|gif)$/,
           use: [
             {
               loader: 'file-loader',
               options: {
                 name: '[path][name].[ext]',
+              },
+            },
+          ],
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 10000, // размер файла в байтах. Файлы меньше этого значения будут преобразованы в base64
+                mimetype: 'image/svg+xml',
               },
             },
           ],

@@ -1,4 +1,4 @@
-import searchIcon from '@assets/icons/search.svg';
+import { images } from '@constants/images';
 import { VALID_LEAST_INPUT_MESS } from '@constants/messages';
 import {
   fetchArtworksFailure,
@@ -78,7 +78,7 @@ const SearchBar: React.FC = () => {
           placeholder="Search Art, Artist, Work..."
         />
         <SearchIcon>
-          <img src={searchIcon} onClick={onSearch} alt="search" />
+          <img src={images.searchIcon} onClick={onSearch} alt="search" />
         </SearchIcon>
       </SearchBarBlock>
       {validationError && <ErrorMessage>{validationError}</ErrorMessage>}

@@ -17,11 +17,15 @@ export const ArtworkContent = styled.div`
 `;
 
 export const ArtworkImg = styled.div`
-  height: 21rem;
-  background-color: ${(props) => props.theme.colors.fillBase};
+  height: 25rem;
+  background-color: ${(props) => props.theme.colors.fillFrame};
   display: flex;
   overflow: hidden;
   justify-content: center;
+
+  @media (max-width: ${breakpoints.desktop}px) {
+    height: 21rem;
+  }
 
   @media (max-width: ${breakpoints.tablet}px) {
     height: 17rem;

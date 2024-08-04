@@ -1,5 +1,6 @@
-import noImg from '@assets/icons/noImg.png';
+// import noImg from '@assets/icons/noImg.png';
 import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
+import { images } from '@constants/images';
 import { ROUTES } from '@constants/routes';
 import useImgUrl from '@utils/hooks/useImgUrl';
 import React, { memo } from 'react';
@@ -28,7 +29,7 @@ const ArtworkCard: React.FC<ArtworkProps> = ({ artwork }) => {
               alt={artwork.title}
             />
           ) : (
-            <img src={noImg} alt="no img" />
+            <img src={images.noImg} alt="no img" />
           )}
         </ArtworkImg>
       </Link>

@@ -1,4 +1,4 @@
-import logo from '@assets/icons/museum-logo-light.svg';
+import { images } from '@constants/images';
 import { ERR_BOUNDARY_MESS } from '@constants/messages';
 import React, { Component, ErrorInfo } from 'react';
 
@@ -27,7 +27,7 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <ErrorBoundaryComponent>
-          <img src={logo} alt="logo" />
+          <img src={images.logoLight} alt="logo" />
           <ErrorBoundaryTitle>Something went wrong</ErrorBoundaryTitle>
         </ErrorBoundaryComponent>
       );

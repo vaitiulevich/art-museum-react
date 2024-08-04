@@ -1,5 +1,5 @@
-import noImg from '@assets/icons/noImg.png';
 import ArtworkContentCard from '@components/ArtworkContentCard/ArtworkContentCard';
+import { images } from '@constants/images';
 import { ROUTES } from '@constants/routes';
 import useImgUrl from '@utils/hooks/useImgUrl';
 import React, { memo } from 'react';
@@ -29,7 +29,7 @@ const ArtworksCatalog: React.FC<ArtworkProps> = ({ artwork }) => {
               {art.image_id ? (
                 <img src={useImgUrl({ id: art.image_id })} alt={art.title} />
               ) : (
-                <img src={noImg} alt="no img" />
+                <img src={images.noImg} alt="no img" />
               )}
             </ArtworkImg>
           </Link>

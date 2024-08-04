@@ -1,8 +1,7 @@
-import bookmark from '@assets/icons/bookmark.svg';
-import home from '@assets/icons/home.svg';
-import logo from '@assets/icons/museum-logo.svg';
+import { images } from '@constants/images';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '@assets/icons/home.svg';
 
 import {
   BurgerMenu,
@@ -36,10 +35,11 @@ const Header: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   return (
     <HeaderContainer>
       <Logo>
-        <img src={logo} alt="museum art" />
+        <img src={images.logo} alt="museum art" />
       </Logo>
       {isMobile ? (
         <>
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
             {location.pathname !== '/' && (
               <Link to={'/'} onClick={handleCloseMenu}>
                 <FavoriteMark>
-                  <img src={home} alt="home" />
+                  <img src={images.homeIcon} alt="home" />
                 </FavoriteMark>
                 <span>Home</span>
               </Link>
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
 
             <Link to={'/favorites'} onClick={handleCloseMenu}>
               <FavoriteMark>
-                <img src={bookmark} alt="bookmark" />
+                <img src={images.bookmarkIcon} alt="bookmark" />
               </FavoriteMark>
               <span>Your favorites</span>
             </Link>
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
           {location.pathname !== '/' && (
             <Link to={'/'}>
               <FavoriteMark>
-                <img src={home} alt="home" />
+                <img src={images.homeIcon} alt="home" />
               </FavoriteMark>
               <span>Home</span>
             </Link>
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
 
           <Link to={'/favorites'}>
             <FavoriteMark>
-              <img src={bookmark} alt="bookmark" />
+              <img src={images.bookmarkIcon} alt="bookmark" />
             </FavoriteMark>
             <span>Your favorites</span>
           </Link>
