@@ -1,12 +1,23 @@
+import logoSvg from '@assets/icons/museum-logo.svg';
+import homeIconSvg from '@assets/icons/home.svg';
+import bookmarkIconSvg from '@assets/icons/bookmark.svg';
+import noImgPng from '@assets/icons/noImg.png';
+import logoLightSvg from '@assets/icons/museum-logo-light.svg';
+import logoModsenSvg from '@assets/icons/logo-modsen.svg';
+import leftArrowSvg from '@assets/icons/LeftArrow.svg';
+import rightArrowSvg from '@assets/icons/RightArrow.svg';
+import searchIconSvg from '@assets/icons/search.svg';
+import favoriteIconSvg from '@assets/icons/iconFavourites.svg';
+
 export const images = {
-  logo: require('/assets/icons/museum-logo.svg').default,
-  homeIcon: require('/assets/icons/home.svg').default,
-  bookmarkIcon: require('/assets/icons/bookmark.svg').default,
-  noImg: require('/assets/icons/noImg.png').default,
-  logoLight: require('/assets/icons/museum-logo-light.svg').default,
-  logoModsen: require('/assets/icons/logo-modsen.svg').default,
-  leftArrow: require('/assets/icons/LeftArrow.svg').default,
-  rightArrow: require('/assets/icons/RightArrow.svg').default,
-  searchIcon: require('/assets/icons/search.svg').default,
-  favoriteIcon: require('/assets/icons/iconFavourites.svg').default,
+  logo: logoSvg,
+  homeIcon: homeIconSvg,
+  bookmarkIcon: bookmarkIconSvg,
+  noImg: noImgPng,
+  logoLight: logoLightSvg,
+  logoModsen: logoModsenSvg,
+  leftArrow: leftArrowSvg,
+  rightArrow: rightArrowSvg,
+  searchIcon: searchIconSvg,
+  favoriteIcon: favoriteIconSvg,
 };
