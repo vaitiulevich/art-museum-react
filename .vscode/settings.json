@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "typescript"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "javascript.validate.enable": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/coverage": true
+  }
+}
