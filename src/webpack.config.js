@@ -26,7 +26,7 @@ module.exports = (env) => {
         '@constants': path.resolve(__dirname, 'constants/'),
         '@store': path.resolve(__dirname, 'store/'),
       },
-      modules: ['.', 'node_modules'],
+      modules: ['node_modules', path.resolve(__dirname, '.')],
     },
     module: {
       rules: [
@@ -63,7 +63,7 @@ module.exports = (env) => {
             {
               loader: 'url-loader',
               options: {
-                limit: 10000, // размер файла в байтах. Файлы меньше этого значения будут преобразованы в base64
+                limit: 10000, 
                 mimetype: 'image/svg+xml',
               },
             },
