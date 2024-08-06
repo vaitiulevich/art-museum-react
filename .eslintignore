@@ -1,0 +1,16 @@
+build/
+coverage/
+
+node_modules/
+
+package-lock.json
+yarn.lock
+
+*.config.js
+*.config.ts
+
+dist/
+public/
+
+*.html
+*.svg

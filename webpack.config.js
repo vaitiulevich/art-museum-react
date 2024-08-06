@@ -7,7 +7,7 @@ module.exports = (env) => {
   const isProd = env.production;
 
   return {
-    entry: './index.tsx',
+    entry: './src/index.tsx',
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: 'bundle.js',
@@ -18,15 +18,15 @@ module.exports = (env) => {
       alias: {
         process: 'process/browser',
         '@': path.resolve(__dirname, 'src'),
-        '@components': path.resolve(__dirname, 'components/'),
-        '@utils': path.resolve(__dirname, 'utils/'),
-        '@styles': path.resolve(__dirname, 'styles/'),
-        '@assets': path.resolve(__dirname, 'assets/'),
-        '@pages': path.resolve(__dirname, 'pages/'),
-        '@constants': path.resolve(__dirname, 'constants/'),
-        '@store': path.resolve(__dirname, 'store/'),
+        '@components': path.resolve(__dirname, 'src/components/'),
+        '@utils': path.resolve(__dirname, 'src/utils/'),
+        '@styles': path.resolve(__dirname, 'src/styles/'),
+        '@assets': path.resolve(__dirname, 'src/assets/'),
+        '@pages': path.resolve(__dirname, 'src/pages/'),
+        '@constants': path.resolve(__dirname, 'src/constants/'),
+        '@store': path.resolve(__dirname, 'src/store/'),
       },
-      modules: ['node_modules', path.resolve(__dirname, '.')],
+      modules: ['.', 'node_modules'],
     },
     module: {
       rules: [
@@ -74,7 +74,7 @@ module.exports = (env) => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: '../public/index.html',
+        template: './public/index.html',
         filename: 'index.html',
       }),
     ],

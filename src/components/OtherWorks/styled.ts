@@ -15,7 +15,7 @@ export const OtherWorksHeadline = styled.div`
 
 export const SubTitle = styled.p`
   color: ${(props) => props.theme.colors.accentText};
-  font-size: ${(props) => props.theme.typography.fontSize.normal};
+  font-size: ${(props) => props.theme.typography.fontSize.medium};
   margin: 0;
 `;
 

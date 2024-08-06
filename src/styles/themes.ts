@@ -1,44 +1,46 @@
-export interface Theme {
-  colors: {
-    accent: string;
-    fill: string;
-    fillBase: string;
-    fillFrame: string;
-    fillMenuPanel: string;
-    fontColor: string;
-    accentText: string;
-    headerLink: string;
-    activeFavorite: string;
-    fillFavorite: string;
-    linerGradientHeader: string;
-    errMessage: string;
-    fillOverlay: string;
-  };
-  typography: {
-    fontSize: {
-      small: string;
-      medium: string;
-      large: string;
-      largest: string;
-    };
-    fontFamily: {
-      general: string;
-    };
-    fontWeight: {
-      thin: string;
-      normal: string;
-      bold: string;
-    };
-  };
-  indents: {
-    containerPaddingDesctop: string;
-    containerPaddingLaptop: string;
-    containerPaddingMobile: string;
-  };
-  border: string;
-}
+// export interface Theme {
+//   colors: {
+//     accent: string;
+//     fill: string;
+//     fillBase: string;
+//     fillFrame: string;
+//     fillMenuPanel: string;
+//     fontColor: string;
+//     accentText: string;
+//     headerLink: string;
+//     activeFavorite: string;
+//     fillFavorite: string;
+//     linerGradientHeader: string;
+//     errMessage: string;
+//     fillOverlay: string;
+//   };
+//   typography: {
+//     fontSize: {
+//       small: string;
+//       medium: string;
+//       large: string;
+//       largest: string;
+//     };
+//     fontFamily: {
+//       general: string;
+//     };
+//     fontWeight: {
+//       thin: string;
+//       normal: string;
+//       bold: string;
+//     };
+//   };
+//   indents: {
+//     containerPaddingDesctop: string;
+//     containerPaddingLaptop: string;
+//     containerPaddingMobile: string;
+//   };
+//   border: string;
+// }
 
-export const globalTheme: Theme = {
+import { DefaultTheme } from 'styled-components';
+
+export const globalTheme: DefaultTheme = {
   colors: {
     accent: '#F17900',
     fill: '#FAFAFA',

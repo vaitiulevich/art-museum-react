@@ -25,10 +25,10 @@
     "yup": "^1.4.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "start": "yarn webpack serve --mode development",
+    "build": "yarn webpack --mode production",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "test": "jest"
@@ -78,6 +78,7 @@
     "@types/lodash.debounce": "^4.0.9",
     "@types/react-redux": "^7.1.33",
     "@types/redux-mock-store": "^1.0.6",
+    "@types/styled-components": "^5.1.34",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.18.0",
     "babel-jest": "^29.7.0",
